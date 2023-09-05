@@ -126,6 +126,7 @@ void DestinationArray::TestCaptureForts(){
     cout<<captureForts_(fotes)<<endl;
 }
 
+
 int main(int argc,char*argv[]){
     DestinationArray tes;
     tes.TestCaptureForts();

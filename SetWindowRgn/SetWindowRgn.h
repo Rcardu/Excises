@@ -56,4 +56,75 @@ private:
 public:
     /*LeetCode 134 加油站*/
     void Test_LC134_canCompleteCircuit();
+private:
+    /*有一个只含有 'Q', 'W', 'E', 'R' 四种字符，且长度为 n 的字符串。
+    假如在该字符串中，这四个字符都恰好出现 n/4 次，那么它就是一个「平衡字符串」。
+    给你一个这样的字符串 s，请通过「替换一个子串」的方式，
+    使原字符串 s 变成一个「平衡字符串」。
+    你可以用和「待替换子串」长度相同的 任何 其他字符串来完成替换。
+    请返回待替换子串的最小可能长度。
+    如果原字符串自身就是一个平衡字符串，则返回 0。
+    示例 1：
+    输入：s = "QWER"
+    输出：0
+    解释：s 已经是平衡的了。
+    示例 2：
+    输入：s = "QQWE"
+    输出：1
+    解释：我们需要把一个 'Q' 替换成 'R'，这样得到的 "RQWE" (或 "QRWE") 是平衡的。
+    示例 3：
+    输入：s = "QQQW"
+    输出：2
+    解释：我们可以把前面的 "QQ" 替换成 "ER"。 
+    示例 4：
+    输入：s = "QQQQ"
+    输出：3
+    解释：我们可以替换后 3 个 'Q'，使 s = "QWER"。*/
+    int LC1234_balancedString_(std::string s);
+    /*cnts:除窗口之外的词频统计
+    len:自由变换的窗口的长度
+    require:每一种字符需要达到的数量
+    返回值：能不能做到*/
+    bool LC1234_Ok_(std::vector<int>cnts,int len,int require);
+    /*附加转换函数，将随机生成的ABCD转化成QWER*/
+    void LC1234_Sub_(std::string&s);
+public:
+    /*LeetCode 1234 平衡子串*/
+    void Test_LC1234_LC1234_balancedString();
+private:
+    /*给定一个正整数数组 nums和一个整数 k，返回 nums 中 「好子数组」 的数目。
+    如果 nums 的某个子数组中不同整数的个数恰好为 k，
+    则称 nums 的这个连续、不一定不同的子数组为 「好子数组 」。
+    例如，[1,2,3,1,2] 中有 3 个不同的整数：1，2，以及 3。
+    子数组 是数组的 连续 部分。
+    示例 1：
+    输入：nums = [1,2,1,2,3], k = 2
+    输出：7
+    解释：恰好由 2 个不同整数组成的子数组：[1,2], [2,1], [1,2], [2,3], [1,2,1], [2,1,2], [1,2,1,2].
+    示例 2：
+    输入：nums = [1,2,1,3,4], k = 3
+    输出：3
+    解释：恰好由 3 个不同整数组成的子数组：[1,2,1,3], [2,1,3], [1,3,4].*/
+    int LC992_subarraysWithKDistinct_(std::vector<int>&nums,int k);
+    /* 寻找小于等于k的种类的个数*/
+    int LC992_findkinds_(std::vector<int>&nums,int k);
+public:
+    /*LeetCode 992 k个不同的子数组*/
+    void Test_LC992_subarraysWithKDistinct();
+private:
+    /*给你一个字符串 s 和一个整数 k ，请你找出 s 中的最长子串，
+    要求该子串中的每一字符出现次数都不少于 k 。返回这一子串的长度。
+    如果不存在这样的子字符串，则返回 0。
+    示例 1：
+    输入：s = "aaabb", k = 3
+    输出：3
+    解释：最长子串为 "aaa" ，其中 'a' 重复了 3 次。
+    示例 2：
+    输入：s = "ababbc", k = 2
+    输出：5
+    解释：最长子串为 "ababb" ，其中 'a' 重复了 2 次， 'b' 重复了 3 次。*/
+    int LC395_longestSubstring_(std::string s,int k);
+public:
+    /*LeetCode 395 至少有 K 个重复字符的最长子串*/
+    void Test_LC395_longestSubstring();
 };
