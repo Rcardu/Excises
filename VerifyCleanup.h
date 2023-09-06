@@ -25,7 +25,7 @@ public:
         for(int i=0;i<len;i++){
             arr[i]=u(e);
         }
-        Swap_(0,RandNum(range1,range2,times),arr);
+        Swap_(0,RandNum(1,arr.size()-1,times),arr);
         return arr;
     }
     //生成随机数组,且数组中的数互不相同
@@ -52,7 +52,6 @@ public:
         
         return arr;
      }
-
     //随机生成一个数
     int RandNum(int range1,int range2,int times){
         std::default_random_engine e;
@@ -82,7 +81,17 @@ public:
         }
         return s;
     }
-
+    //对数器，对比两个数组中的数
+    bool LogarithmicAxis(std::vector<int>&nums1,std::vector<int>&nums2){
+        if(nums1.size()!=nums2.size()){
+            std::cerr<<"数组长度不等！"<<std::endl;
+            return false;
+        }
+        for(int i=0;i<nums1.size();i++){
+            if(nums1[i]!=nums2[i])return false;
+        }
+        return true;
+    }
 
     //打印此数组
     void Print(std::vector<int>&arr){
