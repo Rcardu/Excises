@@ -21,6 +21,54 @@ private:
 public:
     /*LeetCode 162 Ñ°ÕÒ·åÖµ*/
     void Test_LC162_findPeakElement();
-
-
+private:
+    /*¿ìËÙÅÅĞò*/
+    void QuickSort_(std::vector<int>&nums);
+    /*µİ¹é1*/
+    void QuickSort_Switch1(std::vector<int>&nums,int left,int right);
+    /*µİ¹é2 Î²µİ¹éÓÅ»¯*/
+    void QuickSort_Switch2(std::vector<int>&nums,int left,int right);
+    /*½»»»*/
+    void Swap(std::vector<int>&nums,int left,int right);
+    /*¿ìÅÅµİ¹é1*/
+    int QuickSort_BFS_1(std::vector<int>&nums,int left,int right);
+    /*¿ìÅÅµİ¹é2 Ë÷Òı½»»»*/
+    int QuickSort_BFS_2(std::vector<int>&nums,int left,int right);
+    /*¿ìÅÅµİ¹é3 ÓÒË÷Òı½»»»*/
+    int QuickSort_BFS_3(std::vector<int>&nums,int left,int right);
+    /*Ñ¡È¡ÖĞÎ»»ù×¼Êı*/
+    int SelectMidNum_(int left,int right,int mid,std::vector<int>&nums);
+    /*¶ş·ÖÑ°ÕÒ*/
+public:
+    void Test_QuickSort();
+private:
+    /*Ã°ÅİÅÅĞò*/
+    void Sortingalgorithms_(std::vector<int>&nums);
+public:
+    void Test_Sortingalgorithms();
+private: 
+    /*¹é²¢ÅÅĞò*/
+    void Merge_Sort_(std::vector<int>&nums);
+    /*¹é²¢*/
+    void merge_Sort_Sell_(std::vector<int>&nums,int left,int right);
+    /*ÅÅĞò*/
+    void Merge_(std::vector<int>&nums,int left,int mid,int right);
+public:
+    /*¹é²¢ÅÅĞò*/
+    void Test_Merge_Sort();
+private:
+    /*¶ÑÅÅĞò*/
+    std::vector<int>SortArray_(std::vector<int>&nums);
+    /*½¨¶Ñ*/
+    void BuildMaxHeap_(std::vector<int>&nums,int n);
+    /*ÅÅ¶Ñ*/
+    void adjustHeap_(std::vector<int>&nums,int i,int n);
+public:
+    void Test_SortArray();
+private:
+    /*Ï£¶ûÅÅĞò*/
+    std::vector<int>HearArrySort_(std::vector<int>&nums);
+public:
+    /*Ï£¶ûÅÅĞò*/
+    void Test_HearArrySort_();
 };
