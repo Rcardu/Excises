@@ -6,5 +6,8 @@
 #include<algorithm>
 #include<cmath>
 #include<chrono>
-#include"VerifyCleanup.h"
 #include<thread>
+#include<bitset>
+#include"VerifyCleanup.h"
+#include"BitSet.h"
+#include"ListProblem.h"
