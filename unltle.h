@@ -8,6 +8,7 @@
 #include<chrono>
 #include<thread>
 #include<bitset>
+#include<random>
 #include"VerifyCleanup.h"
 #include"BitSet.h"
 #include"ListProblem.h"

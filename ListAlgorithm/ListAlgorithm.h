@@ -13,4 +13,24 @@ private:
 public:
     /*LeetCode 25 k个一组反转链表*/
     void Test_LC25_reverseKGroup();
+private:
+    Node*start;
+    Node*end;
+private:
+    /*给定链表的头结点 head ，请将其按 升序 排列并返回 排序后的链表.*/
+    Node*LCR077_SortList(Node*head);
+    /*使用原地步长来代替递归*/
+    Node*LCR077_SortList_Beta(Node*head);
+    //二分
+    Node*ToMidList(Node*left,Node*right);
+    //取中
+    Node*SandQ(Node*start,Node*right);
+    //排序
+    Node*Merge(Node*start,Node*Mid);
+    void Merge_Beat(Node*l1,Node*r1,Node*l2,Node*r2);
+    //找步长中最后一个结点
+    Node*FindEnd(Node*list,int step);
+public:
+    /*LCR 077 链表排序*/
+    void Test_LCR077_SortList();
 };
