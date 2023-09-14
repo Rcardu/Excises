@@ -12,3 +12,4 @@
 #include"VerifyCleanup.h"
 #include"BitSet.h"
 #include"ListProblem.h"
+#include"BinaryTree.h"
