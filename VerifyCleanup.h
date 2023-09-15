@@ -122,7 +122,7 @@ public:
     }
     //打印此数组
     void Print(std::vector<int>&arr){
-        for(int a:arr)std::cout<<a<<"  ";
+        for(int a:arr)std::cout<<a<<" ";
         std::cout<<std::endl;
     }
 
