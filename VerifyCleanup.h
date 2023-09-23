@@ -125,5 +125,17 @@ public:
         for(int a:arr)std::cout<<a<<" ";
         std::cout<<std::endl;
     }
+    void Print(std::vector<int>arr){
+        for(int a:arr)std::cout<<a<<" ";
+        std::cout<<std::endl;
+    }
 
 };
+void Print(std::vector<int>&arr){
+    for(int a:arr)std::cout<<a<<" ";
+    std::cout<<std::endl;
+}
+void Print(std::vector<int>arr){
+    for(int a:arr)std::cout<<a<<" ";
+    std::cout<<std::endl;
+}
