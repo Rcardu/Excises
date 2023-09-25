@@ -576,13 +576,68 @@ namespace LC212{
         return fix;
     }
 }
-
+namespace LC1803{
+    void Build(){
+        cnt=1;
+    }
+    void Insert(int num){
+        int cur=1;
+        pass[cur]++;
+        for(int i=BiTSize,path;i>=0;i--){
+            path=(num>>i)&1;
+            if(tree[cur][path]==-2)tree[cur][path]=++cnt;
+            cur=tree[cur][path];
+            pass[cur]++;
+        }
+    }
+    int Get(int val,int num){
+        int cur=1;
+        int ans=0;
+        for(int i=BiTSize,path;i>=0;i--){
+            path=(num>>i)&1;
+            //如果val的第i位上是1的话
+            if((val>>i)&1){
+                //字典书中的这一位存在
+                //在此树下的所有路过结点都记录
+                if(tree[cur][path]!=-2)ans+=pass[tree[cur][path]];
+                //如果不存在，且他的异或值也不存在，就直接返回
+                if(tree[cur][path^1]==-2)return ans;
+                //存在就去他的异或子节点
+                cur=tree[cur][path^1];
+            }else{
+                //如果val的第i位上不是1，且字典上还存在num的第i位的话就继续
+                if(tree[cur][path]==-2)return ans;
+                cur=tree[cur][path];
+            }
+        }
+        ans+=pass[cur];
+        return ans;
+    }
+    int countPairs(vector<int>& nums, int low, int high){
+        int ans=0;
+        for(int i=1;i<nums.size();i++){
+            Insert(nums[i-1]);
+            int h=Get(high,nums[i]);
+            int l=Get(low-1,nums[i]);
+            ans+=h-l;
+        }
+        return ans;
+    }
+    void LC1830_countPairs(){
+        Build();
+        vector<int>nums={1,4,2,7};
+        cout<<countPairs(nums,2,6)<<endl;
+    }
+}
 
 int main(int argc,char*argv[]){
     auto start=chrono::system_clock::now();
 
-    using LC421::Test_LC421_findMaximumXOR;
-    Test_LC421_findMaximumXOR();
+    using LC1803::LC1830_countPairs;
+    LC1830_countPairs();
+
+    //using LC421::Test_LC421_findMaximumXOR;
+    //Test_LC421_findMaximumXOR();
     //cout<<__builtin_clz(7)<<endl;
 
 

@@ -278,4 +278,19 @@ namespace LC212{
     vector<string> findWords(vector<vector<char>>& board, vector<string>& words);
     int dfs(vector<vector<char>>&board,int i,int j,int t,vector<string>&ans);
 }
+namespace LC1803{
+    using std::vector;
+    using std::cout;
+    using std::endl;
+    static int MAXN=1400001;
+    static int BiTSize=14;
+    vector<vector<int>>tree(MAXN,vector<int>(2,-2));
+    vector<int>pass(MAXN,0);
+    int cnt;
+    void Build();
+    void Insert(int num);
+    int Get(int val,int num);
 
+    int countPairs(vector<int>& nums, int low, int high);
+    void LC1830_countPairs();
+}
