@@ -121,10 +121,6 @@ public:
         return true;
     }
     //打印此数组
-    void Print(std::vector<int>&arr){
-        for(int a:arr)std::cout<<a<<" ";
-        std::cout<<std::endl;
-    }
     void Print(std::vector<int>arr){
         for(int a:arr)std::cout<<a<<" ";
         std::cout<<std::endl;
@@ -138,4 +134,10 @@ void Print(std::vector<int>&arr){
 void Print(std::vector<int>arr){
     for(int a:arr)std::cout<<a<<" ";
     std::cout<<std::endl;
+}
+bool operator==(std::vector<int>a,std::vector<int>b){
+    if(a.size()!=b.size())return false;
+    for(int i=0;i<a.size();i++)
+        if(a[i]!=b[i])return false;
+    return true;
 }
