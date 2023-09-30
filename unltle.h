@@ -9,6 +9,8 @@
 #include<thread>
 #include<bitset>
 #include<random>
+#include<string>
+#include<string.h>
 #include"VerifyCleanup.h"
 #include"BitSet.h"
 #include"ListProblem.h"
