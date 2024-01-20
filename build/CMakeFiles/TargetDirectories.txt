@@ -1,0 +1,8 @@
+D:/Project/project/Excises/build/CMakeFiles/edit_cache.dir
+D:/Project/project/Excises/build/CMakeFiles/rebuild_cache.dir
+D:/Project/project/Excises/build/Basefile/CMakeFiles/malg.dir
+D:/Project/project/Excises/build/Basefile/CMakeFiles/edit_cache.dir
+D:/Project/project/Excises/build/Basefile/CMakeFiles/rebuild_cache.dir
+D:/Project/project/Excises/build/Test/CMakeFiles/binaryTree.dir
+D:/Project/project/Excises/build/Test/CMakeFiles/edit_cache.dir
+D:/Project/project/Excises/build/Test/CMakeFiles/rebuild_cache.dir

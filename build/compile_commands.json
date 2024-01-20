@@ -1,0 +1,14 @@
+[
+{
+  "directory": "D:/Project/project/Excises/build/Basefile",
+  "command": "D:\\software\\VsCode\\mingw64\\bin\\g++.exe -Dmalg_EXPORTS @CMakeFiles/malg.dir/includes_CXX.rsp -g -o CMakeFiles\\malg.dir\\BinaryTree.cc.obj -c D:\\Project\\project\\Excises\\Basefile\\BinaryTree.cc",
+  "file": "D:/Project/project/Excises/Basefile/BinaryTree.cc",
+  "output": "Basefile/CMakeFiles/malg.dir/BinaryTree.cc.obj"
+},
+{
+  "directory": "D:/Project/project/Excises/build/Test",
+  "command": "D:\\software\\VsCode\\mingw64\\bin\\g++.exe  @CMakeFiles/binaryTree.dir/includes_CXX.rsp -g -o CMakeFiles\\binaryTree.dir\\BinaryTree_t.cc.obj -c D:\\Project\\project\\Excises\\Test\\BinaryTree_t.cc",
+  "file": "D:/Project/project/Excises/Test/BinaryTree_t.cc",
+  "output": "Test/CMakeFiles/binaryTree.dir/BinaryTree_t.cc.obj"
+}
+]

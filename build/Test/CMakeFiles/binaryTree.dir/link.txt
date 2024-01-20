@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\binaryTree.dir/objects.a
+D:\software\VsCode\mingw64\bin\ar.exe qc CMakeFiles\binaryTree.dir/objects.a @CMakeFiles\binaryTree.dir\objects1.rsp
+D:\software\VsCode\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\binaryTree.dir/objects.a -Wl,--no-whole-archive -o D:\Project\project\Excises\bin\binaryTree.exe -Wl,--out-implib,D:\Project\project\Excises\bin\libbinaryTree.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\binaryTree.dir\linkLibs.rsp

@@ -1,0 +1,6 @@
+aux_source_directory(./ SRC1)
+
+set(SRC ${SRC1})
+include_directories(${HEAD_PATH})
+set(LIBRARY_OUTPUT_PATH ${LIB_PATH})
+add_library(${ALG} SHARED ${SRC})

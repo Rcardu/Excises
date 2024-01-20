@@ -73,5 +73,363 @@
         "valarray": "cpp",
         "queue": "cpp"
     },
-    "cmake.sourceDirectory": "D:/Project/project/Excises/DynamicProgramming"
+    "telemetry.integrated.automationShell.windows":"C:\\Program Files\\Git\\bin\\bush.exe",
+    "terminal.integrated.profiles.windows": {
+
+        "PowerShell": {
+            "path":"C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+            "source": "PowerShell",
+            "icon": "terminal-powershell",
+            "args": [
+                "-NoLogo"//不显示Power Shell开头的输出
+                //不加载Power Shell的配置和美化
+                //,"-NoProfile"
+            ]
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Bash":{
+            "path":[
+                "C:\\Program Files\\Git\\bin\\bash.exe"//Git Bush路径
+            ],
+            "icon": "terminal-bash",
+            "args": ["-i","-l"]//激活Git在外部的配置
+        }
+    },
+    "workbench.preferredLightColorTheme": "Visual Studio Light - C++",
+    "workbench.sideBar.location": "right",
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "explorer.confirmDelete": false,
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.defaultDateLocale": "Vs Code local",
+    "gitlens.defaultDateFormat": "MMMM Do, YYY h:mma",
+    "gitlens.defaultTimeFormat": "h:mma",
+    "gitlens.defaultDateShortFormat": "system short date format",
+    "github.copilot.advanced": {},
+    "Codegeex.Translation": "replace",
+    "remote.SSH.defaultExtensions": [
+        "gitpod.gitpod-remote-ssh"
+    ],
+    "remote.SSH.remotePlatform": {
+        "rcardu-autogpt-11y1xj31a5f.ssh.ws-us95.gitpod.io": "linux"
+    },
+    "Codegeex.Privacy": true,
+    "git.autofetch": true,
+    "fileheader.configObj": {
+
+        "createFileTime": true,
+        "language": {
+            "languagetest": {
+                "head": "/$$",
+                "middle": " $ @",
+                "end": " $/",
+                "functionSymbol": {
+                    "head": "/** ",
+                    "middle": " * @",
+                    "end": " */"
+                },
+                "functionParams": "js"
+            }
+        },
+        "autoAdd": true,
+        "autoAddLine": 100,
+        "autoAlready": true,
+        "annotationStr": {
+            "head": "/*",
+            "middle": " * @",
+            "end": " */",
+            "use": false
+        },
+        "headInsertLine": {
+            "php": 2,
+            "sh": 2
+        },
+        "beforeAnnotation": {
+            "文件后缀": "该文件后缀的头部注释之前添加某些内容"
+        },
+        "afterAnnotation": {
+            "文件后缀": "该文件后缀的头部注释之后添加某些内容"
+        },
+        "specialOptions": {
+            "特殊字段": "自定义比如LastEditTime/LastEditors"
+        },
+        "switch": {
+            "newlineAddAnnotation": true
+        },
+        "supportAutoLanguage": [],
+        "prohibitAutoAdd": [
+            "json"
+        ],
+        "folderBlacklist": [
+            "node_modules",
+            "文件夹禁止自动添加头部注释"
+        ],
+        "prohibitItemAutoAdd": [
+            "项目的全称, 整个项目禁止自动添加头部注释, 可以使用快捷键添加"
+        ],
+        "moveCursor": true,
+        "dateFormat": "YYYY-MM-DD HH:mm:ss",
+        "atSymbol": [
+            "@",
+            "@"
+        ],
+        "atSymbolObj": {
+            "文件后缀": [
+                "头部注释@符号",
+                "函数注释@符号"
+            ]
+        },
+        "colon": [
+            ": ",
+            ": "
+        ],
+        "colonObj": {
+            "文件后缀": [
+                "头部注释冒号",
+                "函数注释冒号"
+            ]
+        },
+        "filePathColon": "路径分隔符替换",
+        "showErrorMessage": false,
+        "writeLog": false,
+        "wideSame": false,
+        "wideNum": 13,
+        "functionWideNum": 0,
+        "CheckFileChange": false,
+        "createHeader": false,
+        "useWorker": false,
+        "designAddHead": false,
+        "headDesignName": "random",
+        "headDesign": false,
+        "cursorModeInternalAll": {},
+        "openFunctionParamsCheck": true,
+        "functionParamsShape": [
+            "{",
+            "}"
+        ],
+        "functionBlankSpaceAll": {},
+        "functionTypeSymbol": "*",
+        "typeParamOrder": "type param",
+        "customHasHeadEnd": {},
+        "throttleTime": 60000,
+        "functionParamAddStr": "",
+        "NoMatchParams": "no show param"
+    },
+    "fileheader.customMade": {
+        "Description":"",
+    },
+    "workbench.startupEditor": "none",
+    "cmake.configureOnOpen": true,
+    "explorer.confirmDragAndDrop": false,
+    "git.openRepositoryInParentFolders": "never",
+    "files.autoGuessEncoding": true,
+    "code-runner.executorMap": {
+
+        "javascript": "node",
+        "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+        "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "zig": "zig run",
+        "cpp": "cd $dir && g++ -I /D:/software/VsCode/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/mingw-std-threads-master $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "php": "php",
+        "python": "python -u",
+        "perl": "perl",
+        "perl6": "perl6",
+        "ruby": "ruby",
+        "go": "go run",
+        "lua": "lua",
+        "groovy": "groovy",
+        "powershell": "powershell -ExecutionPolicy ByPass -File",
+        "bat": "cmd /c",
+        "shellscript": "bash",
+        "fsharp": "fsi",
+        "csharp": "scriptcs",
+        "vbscript": "cscript //Nologo",
+        "typescript": "ts-node",
+        "coffeescript": "coffee",
+        "scala": "scala",
+        "swift": "swift",
+        "julia": "julia",
+        "crystal": "crystal",
+        "ocaml": "ocaml",
+        "r": "Rscript",
+        "applescript": "osascript",
+        "clojure": "lein exec",
+        "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
+        "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+        "racket": "racket",
+        "scheme": "csi -script",
+        "ahk": "autohotkey",
+        "autoit": "autoit3",
+        "dart": "dart",
+        "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
+        "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
+        "haskell": "runghc",
+        "nim": "nim compile --verbosity:0 --hints:off --run",
+        "lisp": "sbcl --script",
+        "kit": "kitc --run",
+        "v": "v run",
+        "sass": "sass --style expanded",
+        "scss": "scss --style expanded",
+        "less": "cd $dir && lessc $fileName $fileNameWithoutExt.css",
+        "FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "fortran-modern": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "sml": "cd $dir && sml $fileName"
+    },
+    "C_Cpp.default.cppStandard": "c++23",
+    "C_Cpp.default.cStandard": "c23",
+    "leetcode.endpoint": "leetcode-cn",
+    "leetcode.workspaceFolder": "d:\\Project\\project\\LeetCode\\Cpp",
+    "leetcode.showDescription": "Both",
+    "leetcode.nodePath": "D:\\software\\Nodejs\\node.exe",
+    "leetcode.defaultLanguage": "cpp",
+    "leetcode.hint.configWebviewMarkdown": false,
+    "hexeditor.columnWidth": 16,
+    "hexeditor.showDecodedText": true,
+    "hexeditor.defaultEndianness": "little",
+    "hexeditor.inspectorType": "aside",
+    "Codegeex.Comment.LanguagePreference": "中文",
+    "testExplorer.addToEditorContextMenu": true,
+    "githubPullRequests.assignCreated": "${user}",
+    "gitlens.gitCommands.skipConfirmations": [
+        "fetch:command",
+        "switch:command"
+    ],
+    "githubPullRequests.remotes": [
+        "origin",
+        "upstream",
+        "linux"
+    ],
+    "cmake.languageSupport.dotnetPath": "C:\\Program Files\\dotnet\\dotnet.exe",
+    "cmake.format.allowOptionalArgumentIndentation": true,
+    "cmake.languageSupport.enableFileAPI": true,
+    "cmake.format.spaceInParentheses": true,
+    "cmake.format.spaceAfterCommandName": true,
+    "cmake.showOptionsMovedNotification": false,
+    "cmake.buildDirectory": "${sourceDirectory}/build",
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "clangd.arguments": [
+        "--background-index",
+        "--compile-commands-dir=build",
+        "-j=12",
+        "--query-driver=D:/Project/VC/Tools/MSVC/14.37.32822/include,/usr/bin/clang++,/usr/bin/clang*,usr/bin/g++,usr/bin/gcc,usr/bin/gcc*,C:/Program Files/LLVM/bin/clang,C:/Program Files/LLVM/bin/clang++,D:/software/VsCode/mingw64/bin/g++,D:/software/VsCode/mingw64/bin/gcc",
+        "--clang-tidy",
+        "--all-scopes-completion",
+        "--completion-style=detailed",
+        "--function-arg-placeholders",
+        "--header-insertion=iwyu",
+        "--pch-storage=disk"
+    ],
+        "clangd.path": "c:\\Users\\10905\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\16.0.2\\clangd_16.0.2\\bin\\clangd.exe",
+    "editor.semanticTokenColorCustomizations": {
+        "enabled": true,
+        "rules": {
+            "parameter": "#94669f",
+            "class": {
+            "fontStyle": "bold",
+            "foreground": "#729de3"
+            },
+            "type.fileScope": {
+            "fontStyle": "bold",
+            "foreground": "#729de3"
+            },
+            // for auto
+            "type": {
+            "fontStyle": "bold",
+            "foreground": "#729de3"
+            },
+            "function": {
+            "foreground": "#e5b124"
+            },
+            "typeParameter": {
+            "foreground": "#729de3",
+            "fontStyle": "italic bold",
+            },
+            "variable": "#26cdca",
+            "variable.static": {
+            "foreground": "#8f5daf",
+            "fontStyle": "bold"
+            },
+            "enum": {
+            "fontStyle": "bold",
+            "foreground": "#729de3"
+            },
+            "enumMember": "#397797",
+            "macro": {
+            "foreground": "#8f5daf",
+            "fontStyle": "bold"
+            },
+            "method": {
+            "foreground": "#e5b124",
+            "fontStyle": "underline"
+            },
+            // 只读量加粗
+            "*.readonly": {
+            "fontStyle": "bold"
+            },
+            // 只读量等效为宏
+            "*.fileScope": {
+            "foreground": "#8f5daf",
+            "fontStyle": "bold"
+            },
+            "comment": "#505050",
+            "namespace": {
+            "foreground": "#00d780",
+            "fontStyle": "bold"
+            },
+            "property": {
+            "foreground": "#7ca6b7",
+            "fontStyle": "underline"
+            },
+        }
+    },
+    "clangd.restartAfterCrash": false,
+    "clangd.fallbackFlags": [
+        "-std=c++17",
+        "-l/usr/include/c++/11"
+    ],
+    "[cpp]": {
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+    },
+    "Codegeex.SidebarUI.LanguagePreference": "中文",
+    "Codegeex.Explanation.LanguagePreference": "中文",
+    "github.gitProtocol": "ssh",
+    "git.terminalAuthentication": false,
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.preferredDarkColorTheme": "Visual Studio Dark",
+    "security.allowedUNCHosts": [
+        "wsl.localhost"
+    ],
+    "yaml.schemas": {},
+    "redhat.telemetry.enabled": true,
+    "window.commandCenter": false,
+    "workbench.layoutControl.enabled": false,
+    "less.format.spaceAroundSelectorSeparator": true,
+    // clang-format 扩展的配置，覆盖用户的 `settings.json`
+    // "clang-format.style" : "file:./.clang-format", //从指定配置文件读取格式化风格。
+    "clang-format.style" : "file",
+    // 依次从当前目录、工作目录、path变量，加载默认风格配置文件(.clang-format)。
+    // 如果找不到则使用fallbackStyle, 没有fallbackStyle则默认LLVM,C++。
+    "clang-format.assumeFilename": "./.clang-format", //使用工作区独立配置文件
+    // "clang-format.assumeFilename": "/home/user/.clang-format", //绝对路径，用于全局统一配置
+    "clang-format.executable": "C:\\Users\\10905\\.vscode\\extensions\\ms-vscode.cpptools-1.18.5-win32-x64\\LLVM\\bin\\clang-format.exe",
+    "clang-format.fallbackStyle": "Google",
+    "editor.defaultFormatter": "xaver.clang-format",
+    "editor.formatOnSave": true,
+    "terminal.integrated.tabStopWidth": 2,
+
+    // C/C++ 扩展的配置
+    // "C_Cpp.formatting": "Default",
 }
