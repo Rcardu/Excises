@@ -1,10 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/binaryTree.dir/BinaryTree_t.cc.obj"
-  "CMakeFiles/binaryTree.dir/BinaryTree_t.cc.obj.d"
-  "D:/Project/project/Excises/bin/binaryTree.exe"
-  "D:/Project/project/Excises/bin/binaryTree.exe.manifest"
-  "D:/Project/project/Excises/bin/binaryTree.pdb"
-  "D:/Project/project/Excises/bin/libbinaryTree.dll.a"
+  "../../bin/binaryTree"
+  "../../bin/binaryTree.pdb"
+  "CMakeFiles/binaryTree.dir/BinaryTree_t.cc.o"
+  "CMakeFiles/binaryTree.dir/BinaryTree_t.cc.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

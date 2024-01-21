@@ -1,136 +1,39 @@
 #pragma once
-#include<vector>
-#include<bitset>
-/*Î»Í¼µÄÊµÏÖ*/
-class BitSet{
-public:
-    std::vector<int>Set;
-    //ÉèÖÃÎ»Í¼µÄ´óĞ¡
-    BitSet(int n){
-        Set.resize((n+32-1)/32);
-    }
-    void BitSetAdd(int val){
-        Set[val/32]|=1<<(val%32);
-    }
-    void BitSetRemove(int val){
-        Set[val/32]&=~(1<<(val%32));
-    }
-    void BitSetReverse(int val){
-        Set[val/32]^=1<<(val%32);
-    }
-    bool BitSetContains(int val){
-        return (Set[val/32]>>(val%32)&1)==1;
-    }
-};
-/// @brief ±ÈÌØÎ»ÔËËã
-class BitOperator{
-private:
-    const int Min=INT_MIN;
-public:
-    //¼Ó·¨
-    uint32_t BitAdd(uint32_t a,uint32_t b){
-        uint32_t ans=a;
-        while(b){
-            //ans: aºÍbµÄÎŞ½øÎ»Ïà¼Ó
-            ans=a^b;
-            //b¾Í³ÉÁËaÓëbµÄ½øÎ»ĞÅÏ¢
-            b=(a&b)<<1;
-            a=ans;
-        }
-        return ans;
-    }
-    int BitAdd(int a,int b){
-        int ans=a;
-        while(b){
-            ans=a^b;
-            b=(a&b)<<1;
-            a=ans;
-        }
-        return ans;
-    }
-    //¼õ·¨
-    uint32_t BitMinus(uint32_t a,uint32_t b){return BitAdd(a,BitNeg(b));}
-    uint32_t BitNeg(uint32_t n){return BitAdd(~n,(uint32_t)1);}
-    int BitMinus(int a,int b){return BitAdd(a,BitNeg(b));}
-    int BitNeg(int n){return BitAdd(~n,1);}
-    //³Ë·¨
-    uint32_t BitMultiply(uint32_t a,uint32_t b){
-        uint32_t x=a>0?a:BitNeg(a);
-        uint32_t y=b>0?b:BitNeg(b);
-        uint64_t ans=0;
-        while(y!=0){
-            if((y&1)!=0){
-                ans=BitAdd(ans,x);
-            }
-            x<<=1;
-            y>>=1;
-        }
-        ans>=INT_MAX?INT_MAX:ans;
-        return a>0^b>0?BitNeg((uint32_t)ans):(uint32_t)ans;
-    }
-    int BitMultiply(int a,int b){
-        int x=a>0?a:BitNeg(a);
-        int y=b>0?b:BitNeg(b);
-        long ans=0;
-        while(y){
-            if((y&1)!=0)ans=BitAdd(ans,x);
-            x<<=1;
-            y>>=1;
-        }
-        ans>=INT_MAX?INT_MAX:ans;
-        return a>0^b>0?BitNeg((int)ans):(int)ans;
-    }
-    //³ı·¨
-    uint32_t BitDived(uint32_t a,uint32_t b){
-        //aºÍb¶¼ÊÇÕûÊı×îĞ¡Öµ£¬Ïà³ıÎª1
-        if(a==Min&&b==Min)return 1;
-        //aºÍb¶¼²»ÊÇÕûÊı×îĞ¡£¬Õı³£Ïà³ı
-        if(a!=Min&&b!=Min)return BitDiv(a,b);
-        //bÊÇÕûÊı×îĞ¡£¬ÎŞÂÛaÊÇ¶àÉÙ£¬½á¹û¶¼ÊÇ0
-        if(b==Min)return 0;
-        //aÊÇÕûÊı×îĞ¡µ«bÊÇ-1
-        if(b==BitNeg(1))return INT_MAX;
-        //aÊÇÕûÊı×îĞ¡£¬b²»ÊÇÕûÊı×îĞ¡Ò²²»ÊÇ-1
-        a=BitAdd(a,b>0?b:BitNeg(b));
-        uint32_t ans=BitDiv(a,b);
-        uint32_t offset=b>0?BitNeg(1):1;
-        return BitAdd(ans,offset);
-    }
-    uint32_t BitDiv(uint32_t a,uint32_t b){
-        uint32_t x=a<0?BitNeg(a):a;
-        uint32_t y=b<0?BitNeg(b):b;
-        uint32_t ans=0;
-        for(int i=30;i>=0;i=BitMinus(i,1)){
-            if((x>>i)>=y){
-                ans|=1<<i;
-                x=BitMinus(x,(y<<i));
-            }
-        }
-        return a<0^b<0?BitNeg(ans):ans;
-    }
-    int BitDived(int a,int b){
-        //aºÍb¶¼ÊÇÕûÊı×îĞ¡Öµ£¬Ïà³ıÎª1
-        if(a==Min&&b==Min)return 1;
-        //aºÍb¶¼²»ÊÇÕûÊı×îĞ¡£¬Õı³£Ïà³ı
-        if(a!=Min&&b!=Min)return BitDiv(a,b);
-        //bÊÇÕûÊı×îĞ¡£¬ÎŞÂÛaÊÇ¶àÉÙ£¬½á¹û¶¼ÊÇ0
-        if(b==Min)return 0;
-        //aÊÇÕûÊı×îĞ¡µ«bÊÇ-1
-        if(b==BitNeg(1))return INT_MAX;
-        //aÊÇÕûÊı×îĞ¡£¬b²»ÊÇÕûÊı×îĞ¡Ò²²»ÊÇ-1
-        return BitAdd(BitDiv(BitAdd(a,b>0?b:BitNeg(b)),b),b>0?BitNeg(1):1);
-    }
-    int BitDiv(int a,int b){
-        int x=a<0?BitNeg(a):a;
-        int y=b<0?BitNeg(b):b;
-        int ans=0;
-        for(int i=30;i>=0;i=BitMinus(i,1)){
-            if((x>>i)>=y){
-                ans|=1<<i;
-                x=BitMinus(x,(y<<i));
-            }
-        }
-        return a<0^b<0?BitNeg(ans):ans;
-    }
+#include <limits.h>
 
+#include <bitset>
+#include <vector>
+
+namespace Ricardo {
+/*ä½å›¾*/
+class BitSet {
+ public:
+  std::vector<int> Set = {0};
+  // è®¾ç½®ä½å›¾å¤§å°
+  BitSet(uint32_t n = 1);
+  // æ·»åŠ æ•°
+  void BitSetAdd(int val);
+  // åˆ é™¤æ•°
+  void BitSetRemove(int val);
+  // æœ‰å°±åˆ é™¤ï¼Œæ²¡æœ‰å°±æ·»åŠ 
+  void BitSetReverse(int val);
+  // æ£€æŸ¥valå€¼æ˜¯å¦å­˜åœ¨
+  bool BitSetContains(int val);
 };
+/// @brief bitä½è¿ç®—
+class BitOperator {
+ public:
+  // åŠ æ³•Â¨
+  static int BitAdd(int a, int b);
+  // å‡æ³•
+  static int BitMinus(int a, int b);
+  // ä¹˜æ³•Â¨
+  static int BitMultiply(int a, int b);
+  // é™¤æ³•
+  static int BitDived(int a, int b);
+  static int BitDiv(int a, int b);
+
+ private:
+  static int BitNeg(int n);
+};
+}  // namespace Ricardo

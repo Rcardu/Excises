@@ -1,15 +1,17 @@
 #pragma once
+#include <memory.h>
+
 #include <algorithm>
+#include <climits>
 #include <cstddef>
 #include <list>
-#include <memory.h>
 #include <queue>
 #include <string>
 #include <unordered_map>
 #include <vector>
 
 namespace Ricardo {
-// ¶ş²æÊ÷½áµã½á¹¹
+// ç»“ç‚¹ç»“æ„
 struct TreeNode {
   int _val;
   TreeNode *_left;
@@ -21,111 +23,120 @@ struct TreeNode {
 };
 
 class BinaryTree {
-private:
-  TreeNode *_root;
-  int _size;
+ private:
+  TreeNode *_root = nullptr;
+  int _size = 0;
 
-public:
-  BinaryTree() : _size(0) {}
-  BinaryTree(int val);
-  // ´ÓĞòÁĞ»¯¹¹ÔìÊ÷
+ public:
+  BinaryTree(int val = 0);
+  // ä»åºåˆ—åŒ–å­—ç¬¦ä¸²æ„é€ æ ‘
   BinaryTree(const std::string &data);
-  // ´ÓÇ°ÖĞĞò±éÀú¹¹ÔìÊ÷
+  //  ä»å…ˆä¸­åºæ•°ç»„æ„é€ æ ‘
   BinaryTree(std::vector<int> preorder, std::vector<int> midorder);
   ~BinaryTree();
 
-private:
-  // ´´½¨½áµã
+ private:
+  // å»ºç«‹æ ¹èŠ‚ç‚¹
   void CreatRoot(int val);
 
-  // ½¨Ê÷
+  // å…ˆä¸­åºæ•°ç»„æ„å»ºæ ‘ç®—æ³•
   TreeNode *buildTree_(const std::vector<int> &pre, int l1, int r1,
                        const std::vector<int> &in, int l2, int r2,
                        const std::unordered_map<int, int> &map);
 
-  // ½«·´ĞòÁĞ»¯µÄÊ÷×ª»¯ÎªÊ÷
+  // ååºåˆ—åŒ–
   TreeNode *deserialize(const std::string &data);
-  // ĞÎÈç  1,2,5,#,#.....
+  // ååºåˆ—åŒ–ç®—æ³•
   TreeNode *redeserialize(std::list<std::string> &Arrardata);
 
-  /*½«Ê÷ĞòÁĞ»¯*/
-  void redeserialize(TreeNode *node, std::string &data);
+  // åºåˆ—åŒ–ç®—æ³•
+  void redeserialize(const TreeNode *node, std::string &data);
 
-  // »ñÈ¡Ê÷µÄ×îĞ¡Éî¶È
+  // æœ€å°æ·±åº¦ç®—æ³•
   int MinLen(TreeNode *node);
-  // »ñÈ¡Ê÷µÄ×î´óÉî¶È
+  // æœ€å¤§æ·±åº¦ç®—æ³•
   int MaxLen(TreeNode *node);
-  // ÅĞ¶ÏÊ÷ÊÇ·ñÆ½ºâ
+  //  åˆ¤æ–­æ ‘æ˜¯å¦å¹³è¡¡ç®—æ³•
   bool Banace(TreeNode *node);
 
-  // ÅĞ¶ÏÊÇ·ñÎªÍêÈ«¶ş²æÊ÷
+  // æ˜¯å¦ä¸ºå®Œå…¨äºŒå‰æ ‘ç®—æ³•
   bool isCompleteTree(TreeNode *head);
-  // ÍêÈ«¶ş²æÊ÷µÄ½áµã¸öÊı
+  // æ˜¯å¦ä¸ºå®Œå…¨äºŒå‰æ ‘ç®—æ³•
   int countNodes_f(TreeNode *cur, int level, int h);
-  // ¼ÆËãÍêÈ«¶ş²æÊ÷µ±Ç°½áµãµÄ×î´óÉî¶È
+  // å·¦å­æ ‘æ·±åº¦s
   int mostleft(TreeNode *cur, int level);
 
-  // ¶ş²æÊ÷µÄ×î½ü¹«¹²×æÏÈ
+  // æœ€è¿‘å…¬å…±ç¥–å…ˆç®—æ³•
   TreeNode *lowestCommonAncestor_(TreeNode *node, TreeNode *p, TreeNode *q);
 
-public:
-  // ĞòÁĞ»¯Ê÷
+ public:
+  // åºåˆ—åŒ–æ ‘
   std::string TreetoString(TreeNode *node = nullptr) {
     std::string data;
-    redeserialize(node ? node : _root, data);
+    node = node ? node : _root;
+    redeserialize(node, data);
     return data;
   }
-  // ·´ĞòÁĞ»¯Ê÷£¨½¨Ê÷£©
+  // Â·Â´ååºåˆ—åŒ–æ ‘
   void StringtoTree(const std::string &data) { _root = deserialize(data); }
-  TreeNode *StringtoTree_val(std::string &data) { return deserialize(data); }
-  // ´ÓÖĞĞòºÍÏÈĞò½¨Á¢¶ş²æÊ÷
+  // ååºåˆ—åŒ–è¿”å›æ ‘
+  TreeNode *StringtoTree_val(const std::string &data) {
+    return deserialize(data);
+  }
+  // Â´å…ˆåºä¸­åºæ„å»ºæ ‘
   TreeNode *buildTree(const std::vector<int> &preorder,
                       const std::vector<int> &midorder);
 
-  // ²åÈë×ó½áµã
+  // æ’å…¥å·¦ç»“ç‚¹
   bool Insert_left(TreeNode *node, int val);
 
-  // ²åÈëÓÒ½áµã
+  // æ’å…¥å³ç»“ç‚¹
   bool Insert_right(TreeNode *node, int val);
 
-  // É¾³ıÒÔnodeÎª¸ù½ÚµãµÄ½áµã¼°Æä×ÓÊ÷
+  // åˆ é™¤å½“å‰ç»“ç‚¹åŠå…¶å­—æ ‘
   bool remove(TreeNode *node);
 
-  // »ñµÃÍ·½áµã
-  TreeNode *getRoot() { return _root; }
+  // è·å–æ ¹ç»“ç‚¹
+  const TreeNode *getRoot() const { return _root; }
 
-  // »ñµÃ½áµãÉÏµÄÖµ
-  int getNodeVal(TreeNode *node) { return node ? node->_val : INT_MIN; }
+  // è¿‡å»å½“å‰ç»“ç‚¹çš„å€¼
+  const int getNodeVal(TreeNode *node) const {
+    return node ? node->_val : INT_MIN;
+  }
 
-  // »ñµÃ×ó½áµã
-  TreeNode *getLeft(TreeNode *node) { return node ? node->_left : nullptr; }
+  // è·å–å½“å‰ç»“ç‚¹çš„å·¦ç»“ç‚¹
+  const TreeNode *getLeft(TreeNode *node) const {
+    return node ? node->_left : nullptr;
+  }
 
-  // »ñµÃÓÒ½áµã
-  TreeNode *getRight(TreeNode *node) { return node ? node->_right : nullptr; }
+  // è·å–å½“å‰ç»“ç‚¹çš„å³ç»“ç‚¹
+  const TreeNode *getRight(TreeNode *node) const {
+    return node ? node->_right : nullptr;
+  }
 
-  // »ñµÃ×ÓÊ÷½áµã¸öÊı
-  int getSize() { return _size; }
+  // è·å–å½“å‰æ ‘çš„å¤§å°
+  const int getSize() const { return _size; }
 
-  // »ñµÃ×îĞ¡Éî¶È
-  int GetMinLen(TreeNode *node = nullptr) {
+  // è·å–æ ‘çš„æœ€å°æ·±åº¦
+  const int GetMinLen(TreeNode *node = nullptr) {
     return node ? MinLen(node) : MinLen(_root);
   }
-  // »ñµÃ×î´óÉî¶È
+  // è·å–æ ‘çš„æœ€å¤§æ·±åº¦
   int GetMaxLen(TreeNode *node = nullptr) {
     return node ? MaxLen(node) : MaxLen(_root);
   }
-  // ÅĞ¶ÏÊ÷ÊÇ·ñÆ½ºâ
+  // åˆ¤æ–­æ ‘æ˜¯å¦å¹³è¡¡
   bool Isbanace(TreeNode *node = nullptr) {
     return node ? Banace(node) : Banace(_root);
   }
-  // ÍêÈ«¶ş²æÊ÷µÄ½áµã¸öÊı
+  // å·¦å­æ ‘çš„æ·±åº¦
   int countNodes(TreeNode *node = nullptr) {
     return countNodes_f(node ? node : _root, 1, mostleft(node, 1));
   }
-  // ¶ş²æÊ÷µÄ×î½ü¹«¹²×æÏÈ
+  // æœ€è¿‘å…¬å…±ç¥–å…ˆ
   TreeNode *lowestCommonAncestor_other(TreeNode *p, TreeNode *q,
                                        TreeNode *node = nullptr) {
     return lowestCommonAncestor_(node ? node : _root, p, q);
   }
 };
-} // namespace Ricardo
+}  // namespace Ricardo

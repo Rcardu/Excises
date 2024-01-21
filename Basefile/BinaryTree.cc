@@ -1,4 +1,6 @@
 #include "BinaryTree.h"
+
+#include <iostream>
 #include <unordered_map>
 
 namespace Ricardo {
@@ -22,13 +24,11 @@ TreeNode *BinaryTree::buildTree_(const std::vector<int> &pre, int l1, int r1,
                                  const std::vector<int> &in, int l2, int r2,
                                  const std::unordered_map<int, int> &map) {
   // 如果索引越界表示当前已达最后一个结点
-  if (l1 > r1)
-    return nullptr;
+  if (l1 > r1) return nullptr;
   // 否则从先序表的l1索引取出结点
   TreeNode *head = new TreeNode(pre[l1]);
   // 是最后一个结点
-  if (l1 == r1)
-    return head;
+  if (l1 == r1) return head;
   // 取出当前结点在中序表中的位置，以此位置将中序表分开
   auto find = map.find(pre[l1]);
   int index = 0;
@@ -51,8 +51,7 @@ TreeNode *BinaryTree::buildTree(const std::vector<int> &preorder,
       preorder.size() != midorder.size())
     return nullptr;
   std::unordered_map<int, int> map;
-  for (int i = 0; i < midorder.size(); i++)
-    map[midorder[i]] = i;
+  for (int i = 0; i < midorder.size(); i++) map[midorder[i]] = i;
   return buildTree_(preorder, 0, preorder.size() - 1, midorder, 0,
                     midorder.size() - 1, map);
 }
@@ -61,34 +60,35 @@ bool BinaryTree::Insert_left(TreeNode *node, int val) {
     CreatRoot(val);
     _size = 1;
     return true;
-  } else {
-    if (!node->_left)
-      return false;
   }
-  node->_left = new TreeNode(val);
-  ++_size;
+  if (node->_left) {
+    node->_left->_val = val;
+  } else {
+    node->_left = new TreeNode(val);
+  }
+  _size++;
   return true;
 }
+
 bool BinaryTree::Insert_right(TreeNode *node, int val) {
   if (node == nullptr) {
     CreatRoot(val);
     _size = 1;
     return true;
-  } else {
-    if (!node->_right)
-      return false;
   }
-  node->_right = new TreeNode(val);
-  ++_size;
+  if (node->_right) {
+    node->_right->_val = val;
+  } else {
+    node->_right = new TreeNode(val);
+  }
+  _size++;
   return true;
 }
 bool BinaryTree::remove(TreeNode *node) {
-  if (node == nullptr)
-    return true;
+  if (node == nullptr) return true;
   if (remove(node->_left) && remove(node->_right)) {
     delete node;
     node = nullptr;
-    _size--;
     return true;
   }
   return false;
@@ -130,7 +130,7 @@ TreeNode *BinaryTree::redeserialize(std::list<std::string> &Arrardata) {
   root->_right = redeserialize(Arrardata);
   return root;
 }
-void BinaryTree::redeserialize(TreeNode *node, std::string &data) {
+void BinaryTree::redeserialize(const TreeNode *node, std::string &data) {
   if (node == nullptr)
     data += "#,";
   else {
@@ -140,29 +140,24 @@ void BinaryTree::redeserialize(TreeNode *node, std::string &data) {
   }
 }
 int BinaryTree::MinLen(TreeNode *node) {
-  if (node == nullptr)
-    return 0;
+  if (node == nullptr) return 0;
   if (!node->_left || !node->_right)
     return MinLen(node->_left) + MinLen(node->_right) + 1;
   else
     return std::min(MinLen(node->_left), MinLen(node->_right)) + 1;
 }
 int BinaryTree::MaxLen(TreeNode *node) {
-  if (node == nullptr)
-    return 0;
+  if (node == nullptr) return 0;
   return std::max(MaxLen(node->_left), MaxLen(node->_right)) + 1;
 }
 bool BinaryTree::Banace(TreeNode *node) {
-  if (node == nullptr)
-    return true;
+  if (node == nullptr) return true;
   bool ans = Banace(node->_left) && Banace(node->_right);
-  if (abs(MaxLen(node->_left) - MaxLen(node->_right)) > 1)
-    return false;
+  if (abs(MaxLen(node->_left) - MaxLen(node->_right)) > 1) return false;
   return ans;
 }
 bool BinaryTree::isCompleteTree(TreeNode *head) {
-  if (head == nullptr)
-    return true;
+  if (head == nullptr) return true;
   int l = 0, r = 0;
   std::queue<TreeNode *> que;
   que.push(head);
@@ -191,8 +186,7 @@ bool BinaryTree::isCompleteTree(TreeNode *head) {
   return true;
 }
 int BinaryTree::countNodes_f(TreeNode *cur, int level, int h) {
-  if (level == h)
-    return 1;
+  if (level == h) return 1;
   if (mostleft(cur->_right, level + 1) == h) {
     int num = ((1 << (h - level)) + countNodes_f(cur->_right, level + 1, h));
     return num;
@@ -211,17 +205,14 @@ int BinaryTree::mostleft(TreeNode *cur, int level) {
 TreeNode *BinaryTree::lowestCommonAncestor_(TreeNode *node, TreeNode *p,
                                             TreeNode *q) {
   // 如果为空或者找到了，直接返回当前结点为最近公共祖先
-  if (node == nullptr || node == p || node == q)
-    return node;
+  if (node == nullptr || node == p || node == q) return node;
   // 去左右子树递归寻找
   TreeNode *l = lowestCommonAncestor_(node->_left, p, q);
   TreeNode *r = lowestCommonAncestor_(node->_right, p, q);
   // 如果左右子树的返回结点都不为空，返回当前结点为当前子树的结果
-  if (l != nullptr && r != nullptr)
-    return node;
+  if (l != nullptr && r != nullptr) return node;
   // 如果都为空返回空
-  if (l == nullptr && r == nullptr)
-    return nullptr;
+  if (l == nullptr && r == nullptr) return nullptr;
   // 有一个不为空返回不为空的那个
   if (l != nullptr)
     return l;
@@ -229,4 +220,4 @@ TreeNode *BinaryTree::lowestCommonAncestor_(TreeNode *node, TreeNode *p,
     return r;
 }
 
-} // namespace Ricardo
+}  // namespace Ricardo

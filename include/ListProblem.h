@@ -1,147 +1,57 @@
 #pragma once
-#include<vector>
-#include<iostream>
-struct Node{
-    int val;
-    Node*next;
-    Node():val(0),next(nullptr){};
-    Node(int x):val(x),next(nullptr){};
-    Node(int x,Node*next):val(x),next(next){};
-};
-class ListNode{
-private:
-    int size_;
-    Node*head_;
-public:
-    //»ñµÃÍ·½áµã
-    Node*Head(){return head_;}
-    //»ñµÃÏÂÒ»¸ö½áµã
-    Node*Next(Node*node){return node->next;}
-    //»ñµÃÁ´±í³¤¶È
-    int Size(){return size_;}
-    //ÕÒµ½×îºóÒ»¸ö½áµã
-    Node*FindListLast(){
-        Node*ptr=head_;
-        while(ptr->next)ptr=ptr->next;
-        return ptr;
-    }
-    //ÕÒµ½µ±Ç°½ÚµãµÄÇ°Ò»¸ö½áµã
-    Node*FindThisNode_front(Node*node){
-        Node*ptr=head_;
-        while(ptr->next!=node){
-            ptr=ptr->next;
-        }
-        return ptr;
-    }
-    //Ìí¼Ó½áµãµ½Î²²¿
-    void AddListNode(int val){
-        Node*ptr=FindListLast();
-        ptr->next=new Node(val);
-        size_++;
-    }
-    //Ìí¼Óµ½µ±Ç°½áµãºóÃæ
-    void AddListNode(int val,Node*node){
-        Node*ptr=node->next;
-        node->next=new Node(val);
-        node->next->next=ptr;
-        size_++;
-    }
-    //½«Êı×éÌí¼Óµ½Î²²¿½áµãºóÃæ
-    void AddListNode(std::vector<int>nums){
-        Node*ptr=FindListLast();
-        for(int num:nums){
-            ptr->next=new Node(num);
-            ptr=ptr->next;
-            size_++;
-        }
-    }
-    //½«Êı×éÌí¼Óµ½µ±Ç°½áµãºóÃæ
-    void AddListNode(std::vector<int>nums,Node*node){
-        Node*ptr=node->next;
-        //¼ÇÂ¼²åÈëºóµÄÇ°Ò»¸ö½áµã
-        Node*cur;
-        for(int num:nums){
-            node->next=new Node(num);
-            cur=node;
-            node=node->next;
-            size_++;
-        }
-        cur->next=ptr;
-    }
-    //É¾³ı×îºóÒ»¸ö½áµã
-    Node* RemoveLastNode(){
-        //ÏÈÕÒµ½×îºóÒ»¸ö½áµãµÄÇ°Ò»¸ö½áµã
-        Node*ptr=FindThisNode_front(FindListLast());
-        Node*cur=ptr->next;
-        ptr->next=cur->next;
-        return cur;
-    }
-    //É¾³ıµ±Ç°½áµã
-    Node* RemoveThisNode(Node*node){
-        Node*ptr=FindThisNode_front(node);
-        Node*cur=ptr->next;
-        ptr->next=cur->next;
-        return cur;
-    }
-    //É¾³ıËùÓĞ½áµã
-    void RemoveNode_All(){
-        Node*ptr=head_->next;
-        while(ptr){
-            Node*cur=RemoveThisNode(ptr);
-            ptr=ptr->next;
-            delete cur;
-            cur=nullptr;
-        }
-    }
-public:
-    //Õı³£²åÈëÊ½Á´±í
-    ListNode():size_(0){
-        head_=new Node();
-        std::cout<<"ÆÕÍ¨¹¹Ôì"<<std::endl;
-    }
-    //Êı×é×ª»¯ÎªÁ´±í
-    ListNode(std::vector<int>nums):size_(0),head_(nullptr){
-        head_=new Node();
-        AddListNode(nums);
-        std::cout<<"Êı×é¹¹Ôì"<<std::endl;
-    }
-    ~ListNode(){
-        RemoveNode_All();
-        delete head_;
-        head_=nullptr;
-        std::cout<<"Îö¹¹Íê³É"<<std::endl;
-    }
-    //¿½±´¹¹Ôì
-    ListNode(const ListNode&head){
-        Node*ptr=head.head_;
-        head_=new Node();
-        Node*cur=this->head_;
-        while(ptr->next){
-            cur->next=new Node(ptr->next->val);
-            cur=cur->next;
-            ptr=ptr->next;
-            this->size_++;
-        }
-        std::cout<<"¿½±´¹¹Ôì"<<std::endl;
-    }
-public:
-    //´òÓ¡Á´±í
-    void List_Print(){
-        Node*ptr=head_->next;
-        while(ptr->next){
-            std::cout<<ptr->val<<" -> ";
-            ptr=ptr->next;
-        }
-        std::cout<<ptr->val<<std::endl;
-    }
-    void List_Print(ListNode head){
-        Node*ptr=head.head_->next;
-        while(ptr->next){
-            std::cout<<ptr->val<<" -> ";
-            ptr=ptr->next;
-        }
-        std::cout<<ptr->val<<std::endl;
-    }
-};
+#include <iostream>
+#include <sstream>
+#include <vector>
 
+namespace Ricardo {
 
+// ç»“ç‚¹
+struct Node {
+  int val;
+  Node* next;
+  Node() : val(0), next(nullptr){};
+  Node(int x) : val(x), next(nullptr){};
+  Node(int x, Node* next) : val(x), next(next){};
+};
+class ListNode {
+ public:
+  ListNode();
+  // ä»æ•°ç»„ç”Ÿæˆé“¾è¡¨
+  ListNode(const std::vector<int>& nums);
+  ListNode(const ListNode& head);
+  ~ListNode();
+
+ public:
+  // è·å–å¤´ç»“ç‚¹
+  const Node* getHead() const { return _head; }
+  // è·å–å½“å‰ç»“ç‚¹çš„ä¸‹ä¸€ä¸ªç»“ç‚¹
+  const Node* getNext(const Node* node) const { return node->next; }
+  // è·å–ç»“ç‚¹é•¿åº¦
+  const int getLen() const { return _len; }
+  // è·å–æœ€åä¸€ä¸ªç»“ç‚¹
+  Node* getLastNode() const;
+  // è·å–å½“å‰ç»“ç‚¹çš„å‰ä¸€ä¸ªç»“ç‚¹
+  Node* getNodeFront(Node* node) const;
+  // æ·»åŠ ç»“ç‚¹ï¼ˆå°¾éƒ¨æ·»åŠ ï¼‰
+  void AddNode(int val);
+  // æ·»åŠ ç»“ç‚¹åˆ°å½“å‰ç»“ç‚¹çš„åé¢
+  void AddNode(int val, Node* node);
+  // å°†æ•°ç»„ä¸­çš„æ•°ä½œä¸ºç»“ç‚¹æ·»åŠ åˆ°å½“å‰ç»“ç‚¹çš„åé¢
+  void AddNode(const std::vector<int>& nums);
+  // å°†æ•°ç»„ä¸­çš„æ•°ä½œä¸ºç»“ç‚¹æ·»åŠ åˆ°å½“å‰ç»“ç‚¹çš„åé¢
+  void AddNode(const std::vector<int>& nums, Node* node);
+  // åˆ é™¤æœ€åä¸€ä¸ªç»“ç‚¹
+  Node* removeLastNode();
+  // åˆ é™¤å½“å‰ç»“ç‚¹
+  Node* removeThisNode(Node* node);
+  // åˆ é™¤é“¾è¡¨
+  void removeList();
+
+  std::string toString();
+
+ private:
+  // ç»“ç‚¹é•¿åº¦
+  int _len = 0;
+  Node* _head = nullptr;
+};
+}  // namespace Ricardo

@@ -1,10 +1,12 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/malg.dir/BinaryTree.cc.obj"
-  "CMakeFiles/malg.dir/BinaryTree.cc.obj.d"
-  "D:/Project/project/Excises/lib/libmalg.dll"
-  "D:/Project/project/Excises/lib/libmalg.dll.a"
-  "D:/Project/project/Excises/lib/libmalg.dll.manifest"
-  "D:/Project/project/Excises/lib/libmalg.pdb"
+  "../../lib/libmalg.a"
+  "../../lib/libmalg.pdb"
+  "CMakeFiles/malg.dir/BinaryTree.cc.o"
+  "CMakeFiles/malg.dir/BinaryTree.cc.o.d"
+  "CMakeFiles/malg.dir/BitSet.cc.o"
+  "CMakeFiles/malg.dir/BitSet.cc.o.d"
+  "CMakeFiles/malg.dir/ListProblem.cc.o"
+  "CMakeFiles/malg.dir/ListProblem.cc.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

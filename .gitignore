@@ -1,6 +1,6 @@
 build/
 lib
 .cache/clangd/index
-lib
 bin
 .clang-format
+.vscode

@@ -1,3 +1,2 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\malg.dir/objects.a
-D:\software\VsCode\mingw64\bin\ar.exe qc CMakeFiles\malg.dir/objects.a @CMakeFiles\malg.dir\objects1.rsp
-D:\software\VsCode\mingw64\bin\g++.exe -g -shared -o D:\Project\project\Excises\lib\libmalg.dll -Wl,--out-implib,D:\Project\project\Excises\lib\libmalg.dll.a -Wl,--major-image-version,0,--minor-image-version,0 -Wl,--whole-archive CMakeFiles\malg.dir/objects.a -Wl,--no-whole-archive @CMakeFiles\malg.dir\linkLibs.rsp
+/usr/bin/ar qc ../../lib/libmalg.a CMakeFiles/malg.dir/BinaryTree.cc.o CMakeFiles/malg.dir/BitSet.cc.o CMakeFiles/malg.dir/ListProblem.cc.o
+/usr/bin/ranlib ../../lib/libmalg.a
