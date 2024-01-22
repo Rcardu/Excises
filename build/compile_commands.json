@@ -1,5 +1,15 @@
 [
 {
+  "directory": "/home/Ricardo/ICEY/Excises/build/Algorithm",
+  "command": "/usr/bin/c++  -I/home/Ricardo/ICEY/Excises/include -I/home/Ricardo/ICEY/Excises/include/Algorithm -g -o CMakeFiles/alg.dir/AmountData.cpp.o -c /home/Ricardo/ICEY/Excises/Algorithm/AmountData.cpp",
+  "file": "/home/Ricardo/ICEY/Excises/Algorithm/AmountData.cpp"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Excises/build/Algorithm",
+  "command": "/usr/bin/c++  -I/home/Ricardo/ICEY/Excises/include -I/home/Ricardo/ICEY/Excises/include/Algorithm -g -o CMakeFiles/alg.dir/AndCheckTheSet.cpp.o -c /home/Ricardo/ICEY/Excises/Algorithm/AndCheckTheSet.cpp",
+  "file": "/home/Ricardo/ICEY/Excises/Algorithm/AndCheckTheSet.cpp"
+},
+{
   "directory": "/home/Ricardo/ICEY/Excises/build/Basefile",
   "command": "/usr/bin/c++  -I/home/Ricardo/ICEY/Excises/include -I/home/Ricardo/ICEY/Excises/include/Algorithm -g -o CMakeFiles/malg.dir/BinaryTree.cc.o -c /home/Ricardo/ICEY/Excises/Basefile/BinaryTree.cc",
   "file": "/home/Ricardo/ICEY/Excises/Basefile/BinaryTree.cc"
@@ -15,23 +25,28 @@
   "file": "/home/Ricardo/ICEY/Excises/Basefile/ListProblem.cc"
 },
 {
-  "directory": "/home/Ricardo/ICEY/Excises/build/Test",
-  "command": "/usr/bin/c++  -I/home/Ricardo/ICEY/Excises/include -I/home/Ricardo/ICEY/Excises/include/Algorithm -g -o CMakeFiles/binaryTree.dir/BinaryTree_t.cc.o -c /home/Ricardo/ICEY/Excises/Test/BinaryTree_t.cc",
-  "file": "/home/Ricardo/ICEY/Excises/Test/BinaryTree_t.cc"
+  "directory": "/home/Ricardo/ICEY/Excises/build/test",
+  "command": "/usr/bin/c++  -I/home/Ricardo/ICEY/Excises/include -I/home/Ricardo/ICEY/Excises/include/Algorithm -g -o CMakeFiles/binaryTree.dir/BinaryTree_t.cc.o -c /home/Ricardo/ICEY/Excises/test/BinaryTree_t.cc",
+  "file": "/home/Ricardo/ICEY/Excises/test/BinaryTree_t.cc"
 },
 {
-  "directory": "/home/Ricardo/ICEY/Excises/build/Test",
-  "command": "/usr/bin/c++  -I/home/Ricardo/ICEY/Excises/include -I/home/Ricardo/ICEY/Excises/include/Algorithm -g -o CMakeFiles/bitset.dir/BitSet_t.cc.o -c /home/Ricardo/ICEY/Excises/Test/BitSet_t.cc",
-  "file": "/home/Ricardo/ICEY/Excises/Test/BitSet_t.cc"
+  "directory": "/home/Ricardo/ICEY/Excises/build/test",
+  "command": "/usr/bin/c++  -I/home/Ricardo/ICEY/Excises/include -I/home/Ricardo/ICEY/Excises/include/Algorithm -g -o CMakeFiles/bitset.dir/BitSet_t.cc.o -c /home/Ricardo/ICEY/Excises/test/BitSet_t.cc",
+  "file": "/home/Ricardo/ICEY/Excises/test/BitSet_t.cc"
 },
 {
-  "directory": "/home/Ricardo/ICEY/Excises/build/Test",
-  "command": "/usr/bin/c++  -I/home/Ricardo/ICEY/Excises/include -I/home/Ricardo/ICEY/Excises/include/Algorithm -g -o CMakeFiles/listnode.dir/ListProblem_t.cc.o -c /home/Ricardo/ICEY/Excises/Test/ListProblem_t.cc",
-  "file": "/home/Ricardo/ICEY/Excises/Test/ListProblem_t.cc"
+  "directory": "/home/Ricardo/ICEY/Excises/build/test",
+  "command": "/usr/bin/c++  -I/home/Ricardo/ICEY/Excises/include -I/home/Ricardo/ICEY/Excises/include/Algorithm -g -o CMakeFiles/listnode.dir/ListProblem_t.cc.o -c /home/Ricardo/ICEY/Excises/test/ListProblem_t.cc",
+  "file": "/home/Ricardo/ICEY/Excises/test/ListProblem_t.cc"
 },
 {
-  "directory": "/home/Ricardo/ICEY/Excises/build/Test",
-  "command": "/usr/bin/c++  -I/home/Ricardo/ICEY/Excises/include -I/home/Ricardo/ICEY/Excises/include/Algorithm -g -o CMakeFiles/random.dir/RandNum_t.cc.o -c /home/Ricardo/ICEY/Excises/Test/RandNum_t.cc",
-  "file": "/home/Ricardo/ICEY/Excises/Test/RandNum_t.cc"
+  "directory": "/home/Ricardo/ICEY/Excises/build/test",
+  "command": "/usr/bin/c++  -I/home/Ricardo/ICEY/Excises/include -I/home/Ricardo/ICEY/Excises/include/Algorithm -g -o CMakeFiles/random.dir/RandNum_t.cc.o -c /home/Ricardo/ICEY/Excises/test/RandNum_t.cc",
+  "file": "/home/Ricardo/ICEY/Excises/test/RandNum_t.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Excises/build/test",
+  "command": "/usr/bin/c++  -I/home/Ricardo/ICEY/Excises/include -I/home/Ricardo/ICEY/Excises/include/Algorithm -g -o CMakeFiles/amount.dir/algtest/Amount_t.cc.o -c /home/Ricardo/ICEY/Excises/test/algtest/Amount_t.cc",
+  "file": "/home/Ricardo/ICEY/Excises/test/algtest/Amount_t.cc"
 }
 ]

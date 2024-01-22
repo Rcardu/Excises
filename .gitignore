@@ -3,5 +3,4 @@ build
 lib
 .cache/clangd/index
 bin
-.clang-format
 .vscode

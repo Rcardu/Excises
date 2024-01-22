@@ -108,12 +108,7 @@ class Random {
     }
     return true;
   }
-  std::string toString(const std::vector<T>& arr) {
-    std::stringstream ss;
-    for (T a : arr) ss << std::to_string(a) << " ";
-    ss << std::endl;
-    return ss.str();
-  }
+
   friend bool operator==(const std::vector<T>& a, const std::vector<T>& b) {
     if (a.size() != b.size()) return false;
     for (int i = 0; i < a.size(); i++)
@@ -143,4 +138,11 @@ class Random {
     return true;
   }
 };
+template <class T>
+std::string toString(const std::vector<T>& arr) {
+  std::stringstream ss;
+  for (T a : arr) ss << std::to_string(a) << " ";
+  ss << std::endl;
+  return ss.str();
+}
 }  // namespace Ricardo

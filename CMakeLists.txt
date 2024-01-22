@@ -12,9 +12,10 @@ set(NAME_BINARYTREE binaryTree)
 set(NAME_BIT bitset)
 set(NAME_LIST listnode)
 set(NAME_RAND random)
+set(NAME_AMT amount)
 
 
-#add_subdirectory(Algorithm)
+add_subdirectory(Algorithm)
 add_subdirectory(Basefile)
-add_subdirectory(Test)
+add_subdirectory(test)
 

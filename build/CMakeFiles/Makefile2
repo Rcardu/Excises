@@ -63,19 +63,37 @@ CMAKE_BINARY_DIR = /home/Ricardo/ICEY/Excises/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: Algorithm/all
 all: Basefile/all
-all: Test/all
+all: test/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
+preinstall: Algorithm/preinstall
 preinstall: Basefile/preinstall
-preinstall: Test/preinstall
+preinstall: test/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: Algorithm/clean
 clean: Basefile/clean
-clean: Test/clean
+clean: test/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory Algorithm
+
+# Recursive "all" directory target.
+Algorithm/all: Algorithm/CMakeFiles/alg.dir/all
+.PHONY : Algorithm/all
+
+# Recursive "preinstall" directory target.
+Algorithm/preinstall:
+.PHONY : Algorithm/preinstall
+
+# Recursive "clean" directory target.
+Algorithm/clean: Algorithm/CMakeFiles/alg.dir/clean
+.PHONY : Algorithm/clean
 
 #=============================================================================
 # Directory level rules for directory Basefile
@@ -93,25 +111,53 @@ Basefile/clean: Basefile/CMakeFiles/malg.dir/clean
 .PHONY : Basefile/clean
 
 #=============================================================================
-# Directory level rules for directory Test
+# Directory level rules for directory test
 
 # Recursive "all" directory target.
-Test/all: Test/CMakeFiles/binaryTree.dir/all
-Test/all: Test/CMakeFiles/bitset.dir/all
-Test/all: Test/CMakeFiles/listnode.dir/all
-Test/all: Test/CMakeFiles/random.dir/all
-.PHONY : Test/all
+test/all: test/CMakeFiles/binaryTree.dir/all
+test/all: test/CMakeFiles/bitset.dir/all
+test/all: test/CMakeFiles/listnode.dir/all
+test/all: test/CMakeFiles/random.dir/all
+test/all: test/CMakeFiles/amount.dir/all
+.PHONY : test/all
 
 # Recursive "preinstall" directory target.
-Test/preinstall:
-.PHONY : Test/preinstall
+test/preinstall:
+.PHONY : test/preinstall
 
 # Recursive "clean" directory target.
-Test/clean: Test/CMakeFiles/binaryTree.dir/clean
-Test/clean: Test/CMakeFiles/bitset.dir/clean
-Test/clean: Test/CMakeFiles/listnode.dir/clean
-Test/clean: Test/CMakeFiles/random.dir/clean
-.PHONY : Test/clean
+test/clean: test/CMakeFiles/binaryTree.dir/clean
+test/clean: test/CMakeFiles/bitset.dir/clean
+test/clean: test/CMakeFiles/listnode.dir/clean
+test/clean: test/CMakeFiles/random.dir/clean
+test/clean: test/CMakeFiles/amount.dir/clean
+.PHONY : test/clean
+
+#=============================================================================
+# Target rules for target Algorithm/CMakeFiles/alg.dir
+
+# All Build rule for target.
+Algorithm/CMakeFiles/alg.dir/all:
+	$(MAKE) $(MAKESILENT) -f Algorithm/CMakeFiles/alg.dir/build.make Algorithm/CMakeFiles/alg.dir/depend
+	$(MAKE) $(MAKESILENT) -f Algorithm/CMakeFiles/alg.dir/build.make Algorithm/CMakeFiles/alg.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/Ricardo/ICEY/Excises/build/CMakeFiles --progress-num=1,2,3 "Built target alg"
+.PHONY : Algorithm/CMakeFiles/alg.dir/all
+
+# Build rule for subdir invocation for target.
+Algorithm/CMakeFiles/alg.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/ICEY/Excises/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Algorithm/CMakeFiles/alg.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/ICEY/Excises/build/CMakeFiles 0
+.PHONY : Algorithm/CMakeFiles/alg.dir/rule
+
+# Convenience name for target.
+alg: Algorithm/CMakeFiles/alg.dir/rule
+.PHONY : alg
+
+# clean rule for target.
+Algorithm/CMakeFiles/alg.dir/clean:
+	$(MAKE) $(MAKESILENT) -f Algorithm/CMakeFiles/alg.dir/build.make Algorithm/CMakeFiles/alg.dir/clean
+.PHONY : Algorithm/CMakeFiles/alg.dir/clean
 
 #=============================================================================
 # Target rules for target Basefile/CMakeFiles/malg.dir
@@ -120,7 +166,7 @@ Test/clean: Test/CMakeFiles/random.dir/clean
 Basefile/CMakeFiles/malg.dir/all:
 	$(MAKE) $(MAKESILENT) -f Basefile/CMakeFiles/malg.dir/build.make Basefile/CMakeFiles/malg.dir/depend
 	$(MAKE) $(MAKESILENT) -f Basefile/CMakeFiles/malg.dir/build.make Basefile/CMakeFiles/malg.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/Ricardo/ICEY/Excises/build/CMakeFiles --progress-num=7,8,9,10 "Built target malg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/Ricardo/ICEY/Excises/build/CMakeFiles --progress-num=12,13,14,15 "Built target malg"
 .PHONY : Basefile/CMakeFiles/malg.dir/all
 
 # Build rule for subdir invocation for target.
@@ -140,108 +186,139 @@ Basefile/CMakeFiles/malg.dir/clean:
 .PHONY : Basefile/CMakeFiles/malg.dir/clean
 
 #=============================================================================
-# Target rules for target Test/CMakeFiles/binaryTree.dir
+# Target rules for target test/CMakeFiles/binaryTree.dir
 
 # All Build rule for target.
-Test/CMakeFiles/binaryTree.dir/all: Basefile/CMakeFiles/malg.dir/all
-	$(MAKE) $(MAKESILENT) -f Test/CMakeFiles/binaryTree.dir/build.make Test/CMakeFiles/binaryTree.dir/depend
-	$(MAKE) $(MAKESILENT) -f Test/CMakeFiles/binaryTree.dir/build.make Test/CMakeFiles/binaryTree.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/Ricardo/ICEY/Excises/build/CMakeFiles --progress-num=1,2 "Built target binaryTree"
-.PHONY : Test/CMakeFiles/binaryTree.dir/all
+test/CMakeFiles/binaryTree.dir/all: Algorithm/CMakeFiles/alg.dir/all
+test/CMakeFiles/binaryTree.dir/all: Basefile/CMakeFiles/malg.dir/all
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/binaryTree.dir/build.make test/CMakeFiles/binaryTree.dir/depend
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/binaryTree.dir/build.make test/CMakeFiles/binaryTree.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/Ricardo/ICEY/Excises/build/CMakeFiles --progress-num=6,7 "Built target binaryTree"
+.PHONY : test/CMakeFiles/binaryTree.dir/all
 
 # Build rule for subdir invocation for target.
-Test/CMakeFiles/binaryTree.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/ICEY/Excises/build/CMakeFiles 6
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Test/CMakeFiles/binaryTree.dir/all
+test/CMakeFiles/binaryTree.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/ICEY/Excises/build/CMakeFiles 9
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/binaryTree.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/ICEY/Excises/build/CMakeFiles 0
-.PHONY : Test/CMakeFiles/binaryTree.dir/rule
+.PHONY : test/CMakeFiles/binaryTree.dir/rule
 
 # Convenience name for target.
-binaryTree: Test/CMakeFiles/binaryTree.dir/rule
+binaryTree: test/CMakeFiles/binaryTree.dir/rule
 .PHONY : binaryTree
 
 # clean rule for target.
-Test/CMakeFiles/binaryTree.dir/clean:
-	$(MAKE) $(MAKESILENT) -f Test/CMakeFiles/binaryTree.dir/build.make Test/CMakeFiles/binaryTree.dir/clean
-.PHONY : Test/CMakeFiles/binaryTree.dir/clean
+test/CMakeFiles/binaryTree.dir/clean:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/binaryTree.dir/build.make test/CMakeFiles/binaryTree.dir/clean
+.PHONY : test/CMakeFiles/binaryTree.dir/clean
 
 #=============================================================================
-# Target rules for target Test/CMakeFiles/bitset.dir
+# Target rules for target test/CMakeFiles/bitset.dir
 
 # All Build rule for target.
-Test/CMakeFiles/bitset.dir/all: Basefile/CMakeFiles/malg.dir/all
-	$(MAKE) $(MAKESILENT) -f Test/CMakeFiles/bitset.dir/build.make Test/CMakeFiles/bitset.dir/depend
-	$(MAKE) $(MAKESILENT) -f Test/CMakeFiles/bitset.dir/build.make Test/CMakeFiles/bitset.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/Ricardo/ICEY/Excises/build/CMakeFiles --progress-num=3,4 "Built target bitset"
-.PHONY : Test/CMakeFiles/bitset.dir/all
+test/CMakeFiles/bitset.dir/all: Algorithm/CMakeFiles/alg.dir/all
+test/CMakeFiles/bitset.dir/all: Basefile/CMakeFiles/malg.dir/all
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/bitset.dir/build.make test/CMakeFiles/bitset.dir/depend
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/bitset.dir/build.make test/CMakeFiles/bitset.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/Ricardo/ICEY/Excises/build/CMakeFiles --progress-num=8,9 "Built target bitset"
+.PHONY : test/CMakeFiles/bitset.dir/all
 
 # Build rule for subdir invocation for target.
-Test/CMakeFiles/bitset.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/ICEY/Excises/build/CMakeFiles 6
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Test/CMakeFiles/bitset.dir/all
+test/CMakeFiles/bitset.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/ICEY/Excises/build/CMakeFiles 9
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/bitset.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/ICEY/Excises/build/CMakeFiles 0
-.PHONY : Test/CMakeFiles/bitset.dir/rule
+.PHONY : test/CMakeFiles/bitset.dir/rule
 
 # Convenience name for target.
-bitset: Test/CMakeFiles/bitset.dir/rule
+bitset: test/CMakeFiles/bitset.dir/rule
 .PHONY : bitset
 
 # clean rule for target.
-Test/CMakeFiles/bitset.dir/clean:
-	$(MAKE) $(MAKESILENT) -f Test/CMakeFiles/bitset.dir/build.make Test/CMakeFiles/bitset.dir/clean
-.PHONY : Test/CMakeFiles/bitset.dir/clean
+test/CMakeFiles/bitset.dir/clean:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/bitset.dir/build.make test/CMakeFiles/bitset.dir/clean
+.PHONY : test/CMakeFiles/bitset.dir/clean
 
 #=============================================================================
-# Target rules for target Test/CMakeFiles/listnode.dir
+# Target rules for target test/CMakeFiles/listnode.dir
 
 # All Build rule for target.
-Test/CMakeFiles/listnode.dir/all: Basefile/CMakeFiles/malg.dir/all
-	$(MAKE) $(MAKESILENT) -f Test/CMakeFiles/listnode.dir/build.make Test/CMakeFiles/listnode.dir/depend
-	$(MAKE) $(MAKESILENT) -f Test/CMakeFiles/listnode.dir/build.make Test/CMakeFiles/listnode.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/Ricardo/ICEY/Excises/build/CMakeFiles --progress-num=5,6 "Built target listnode"
-.PHONY : Test/CMakeFiles/listnode.dir/all
+test/CMakeFiles/listnode.dir/all: Algorithm/CMakeFiles/alg.dir/all
+test/CMakeFiles/listnode.dir/all: Basefile/CMakeFiles/malg.dir/all
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/listnode.dir/build.make test/CMakeFiles/listnode.dir/depend
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/listnode.dir/build.make test/CMakeFiles/listnode.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/Ricardo/ICEY/Excises/build/CMakeFiles --progress-num=10,11 "Built target listnode"
+.PHONY : test/CMakeFiles/listnode.dir/all
 
 # Build rule for subdir invocation for target.
-Test/CMakeFiles/listnode.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/ICEY/Excises/build/CMakeFiles 6
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Test/CMakeFiles/listnode.dir/all
+test/CMakeFiles/listnode.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/ICEY/Excises/build/CMakeFiles 9
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/listnode.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/ICEY/Excises/build/CMakeFiles 0
-.PHONY : Test/CMakeFiles/listnode.dir/rule
+.PHONY : test/CMakeFiles/listnode.dir/rule
 
 # Convenience name for target.
-listnode: Test/CMakeFiles/listnode.dir/rule
+listnode: test/CMakeFiles/listnode.dir/rule
 .PHONY : listnode
 
 # clean rule for target.
-Test/CMakeFiles/listnode.dir/clean:
-	$(MAKE) $(MAKESILENT) -f Test/CMakeFiles/listnode.dir/build.make Test/CMakeFiles/listnode.dir/clean
-.PHONY : Test/CMakeFiles/listnode.dir/clean
+test/CMakeFiles/listnode.dir/clean:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/listnode.dir/build.make test/CMakeFiles/listnode.dir/clean
+.PHONY : test/CMakeFiles/listnode.dir/clean
 
 #=============================================================================
-# Target rules for target Test/CMakeFiles/random.dir
+# Target rules for target test/CMakeFiles/random.dir
 
 # All Build rule for target.
-Test/CMakeFiles/random.dir/all: Basefile/CMakeFiles/malg.dir/all
-	$(MAKE) $(MAKESILENT) -f Test/CMakeFiles/random.dir/build.make Test/CMakeFiles/random.dir/depend
-	$(MAKE) $(MAKESILENT) -f Test/CMakeFiles/random.dir/build.make Test/CMakeFiles/random.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/Ricardo/ICEY/Excises/build/CMakeFiles --progress-num=11,12 "Built target random"
-.PHONY : Test/CMakeFiles/random.dir/all
+test/CMakeFiles/random.dir/all: Algorithm/CMakeFiles/alg.dir/all
+test/CMakeFiles/random.dir/all: Basefile/CMakeFiles/malg.dir/all
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/random.dir/build.make test/CMakeFiles/random.dir/depend
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/random.dir/build.make test/CMakeFiles/random.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/Ricardo/ICEY/Excises/build/CMakeFiles --progress-num=16,17 "Built target random"
+.PHONY : test/CMakeFiles/random.dir/all
 
 # Build rule for subdir invocation for target.
-Test/CMakeFiles/random.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/ICEY/Excises/build/CMakeFiles 6
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Test/CMakeFiles/random.dir/all
+test/CMakeFiles/random.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/ICEY/Excises/build/CMakeFiles 9
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/random.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/ICEY/Excises/build/CMakeFiles 0
-.PHONY : Test/CMakeFiles/random.dir/rule
+.PHONY : test/CMakeFiles/random.dir/rule
 
 # Convenience name for target.
-random: Test/CMakeFiles/random.dir/rule
+random: test/CMakeFiles/random.dir/rule
 .PHONY : random
 
 # clean rule for target.
-Test/CMakeFiles/random.dir/clean:
-	$(MAKE) $(MAKESILENT) -f Test/CMakeFiles/random.dir/build.make Test/CMakeFiles/random.dir/clean
-.PHONY : Test/CMakeFiles/random.dir/clean
+test/CMakeFiles/random.dir/clean:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/random.dir/build.make test/CMakeFiles/random.dir/clean
+.PHONY : test/CMakeFiles/random.dir/clean
+
+#=============================================================================
+# Target rules for target test/CMakeFiles/amount.dir
+
+# All Build rule for target.
+test/CMakeFiles/amount.dir/all: Algorithm/CMakeFiles/alg.dir/all
+test/CMakeFiles/amount.dir/all: Basefile/CMakeFiles/malg.dir/all
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/amount.dir/build.make test/CMakeFiles/amount.dir/depend
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/amount.dir/build.make test/CMakeFiles/amount.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/Ricardo/ICEY/Excises/build/CMakeFiles --progress-num=4,5 "Built target amount"
+.PHONY : test/CMakeFiles/amount.dir/all
+
+# Build rule for subdir invocation for target.
+test/CMakeFiles/amount.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/ICEY/Excises/build/CMakeFiles 9
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/amount.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/ICEY/Excises/build/CMakeFiles 0
+.PHONY : test/CMakeFiles/amount.dir/rule
+
+# Convenience name for target.
+amount: test/CMakeFiles/amount.dir/rule
+.PHONY : amount
+
+# clean rule for target.
+test/CMakeFiles/amount.dir/clean:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/amount.dir/build.make test/CMakeFiles/amount.dir/clean
+.PHONY : test/CMakeFiles/amount.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -7,12 +7,13 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
+  "../Algorithm/CMakeLists.txt"
   "../Basefile/CMakeLists.txt"
   "../CMakeLists.txt"
-  "../Test/CMakeLists.txt"
   "CMakeFiles/3.22.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.22.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.22.1/CMakeSystem.cmake"
+  "../test/CMakeLists.txt"
   "/usr/share/cmake-3.22/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.22/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake"
@@ -41,15 +42,18 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "Algorithm/CMakeFiles/CMakeDirectoryInformation.cmake"
   "Basefile/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "Test/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "test/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "Algorithm/CMakeFiles/alg.dir/DependInfo.cmake"
   "Basefile/CMakeFiles/malg.dir/DependInfo.cmake"
-  "Test/CMakeFiles/binaryTree.dir/DependInfo.cmake"
-  "Test/CMakeFiles/bitset.dir/DependInfo.cmake"
-  "Test/CMakeFiles/listnode.dir/DependInfo.cmake"
-  "Test/CMakeFiles/random.dir/DependInfo.cmake"
+  "test/CMakeFiles/binaryTree.dir/DependInfo.cmake"
+  "test/CMakeFiles/bitset.dir/DependInfo.cmake"
+  "test/CMakeFiles/listnode.dir/DependInfo.cmake"
+  "test/CMakeFiles/random.dir/DependInfo.cmake"
+  "test/CMakeFiles/amount.dir/DependInfo.cmake"
   )

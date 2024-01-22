@@ -1,6 +1,5 @@
-aux_source_directory(./ SRC1)
 
-set(SRC ${SRC1})
+set(SRC AmountData.cpp AndCheckTheSet.cpp )
 include_directories(${HEAD_PATH})
 set(LIBRARY_OUTPUT_PATH ${LIB_PATH})
-add_library(${ALG} SHARED ${SRC})
+add_library(${ALG} STATIC ${SRC})

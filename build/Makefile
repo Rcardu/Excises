@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named alg
+
+# Build rule for target.
+alg: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 alg
+.PHONY : alg
+
+# fast build rule for target.
+alg/fast:
+	$(MAKE) $(MAKESILENT) -f Algorithm/CMakeFiles/alg.dir/build.make Algorithm/CMakeFiles/alg.dir/build
+.PHONY : alg/fast
+
+#=============================================================================
 # Target rules for targets named malg
 
 # Build rule for target.
@@ -139,7 +152,7 @@ binaryTree: cmake_check_build_system
 
 # fast build rule for target.
 binaryTree/fast:
-	$(MAKE) $(MAKESILENT) -f Test/CMakeFiles/binaryTree.dir/build.make Test/CMakeFiles/binaryTree.dir/build
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/binaryTree.dir/build.make test/CMakeFiles/binaryTree.dir/build
 .PHONY : binaryTree/fast
 
 #=============================================================================
@@ -152,7 +165,7 @@ bitset: cmake_check_build_system
 
 # fast build rule for target.
 bitset/fast:
-	$(MAKE) $(MAKESILENT) -f Test/CMakeFiles/bitset.dir/build.make Test/CMakeFiles/bitset.dir/build
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/bitset.dir/build.make test/CMakeFiles/bitset.dir/build
 .PHONY : bitset/fast
 
 #=============================================================================
@@ -165,7 +178,7 @@ listnode: cmake_check_build_system
 
 # fast build rule for target.
 listnode/fast:
-	$(MAKE) $(MAKESILENT) -f Test/CMakeFiles/listnode.dir/build.make Test/CMakeFiles/listnode.dir/build
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/listnode.dir/build.make test/CMakeFiles/listnode.dir/build
 .PHONY : listnode/fast
 
 #=============================================================================
@@ -178,8 +191,21 @@ random: cmake_check_build_system
 
 # fast build rule for target.
 random/fast:
-	$(MAKE) $(MAKESILENT) -f Test/CMakeFiles/random.dir/build.make Test/CMakeFiles/random.dir/build
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/random.dir/build.make test/CMakeFiles/random.dir/build
 .PHONY : random/fast
+
+#=============================================================================
+# Target rules for targets named amount
+
+# Build rule for target.
+amount: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 amount
+.PHONY : amount
+
+# fast build rule for target.
+amount/fast:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/amount.dir/build.make test/CMakeFiles/amount.dir/build
+.PHONY : amount/fast
 
 # Help Target
 help:
@@ -189,6 +215,8 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... alg"
+	@echo "... amount"
 	@echo "... binaryTree"
 	@echo "... bitset"
 	@echo "... listnode"
