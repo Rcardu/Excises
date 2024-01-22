@@ -1,5 +1,4 @@
 build/
-build
 lib
 .cache/clangd/index
 bin
