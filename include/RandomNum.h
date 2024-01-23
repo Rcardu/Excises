@@ -5,6 +5,7 @@
 #include <iostream>
 #include <random>
 #include <sstream>
+#include <typeinfo>
 #include <unordered_map>
 #include <unordered_set>
 #include <utility>
@@ -27,34 +28,60 @@ class Random {
     std::random_device r;
     std::vector<T> arr(len);
     std::default_random_engine e(r());
-    std::uniform_real_distribution<T> u(range1, range2);
-    e.seed(time(0) + times);
-    for (int i = 0; i < len; i++) {
-      arr[i] = u(e);
+    if (typeid(T) == typeid(int)) {
+      std::uniform_int_distribution<int> u(range1, range2);
+      e.seed(time(0) + times);
+      for (int i = 0; i < len; i++) {
+        arr[i] = u(e);
+      }
+
+    } else {
+      std::uniform_real_distribution<double> u(range1, range2);
+      e.seed(time(0) + times);
+      for (int i = 0; i < len; i++) {
+        arr[i] = u(e);
+      }
     }
     if (len == 1) return arr;
-    _Swap(0, RandRealNum(1, arr.size() - 1, times), arr);
+    _Swap(0, RandNum(1, arr.size() - 1, times), arr);
     return arr;
   }
   std::vector<T> RandVectorDifferent(int len, T range1, T range2, int times) {
     if (len > range2 - range1 + 1) {
-      std::cerr << "³¤¶È´óÓÚ·¶Î§²»ÄÜ±£Ö¤¶¼²»ÏàÍ¬" << std::endl;
+      std::cerr << "范围不符合" << std::endl;
       return {};
     }
     std::vector<T> arr(len);
     std::default_random_engine e;
-    std::uniform_int_distribution<T> u(range1, range2);
-    std::unordered_set<T> set;
-    e.seed(time(0) + times);
-    int n = u(e);
-    for (int i = 0; i < len; i++) {
-      T num = u(e);
-      if (set.count(num)) {
-        i--;
-        continue;
+    if (typeid(T) == typeid(int)) {
+      std::uniform_int_distribution<int> u(range1, range2);
+      std::unordered_set<T> set;
+      e.seed(time(0) + times);
+      int n = u(e);
+      for (int i = 0; i < len; i++) {
+        T num = u(e);
+        if (set.count(num)) {
+          i--;
+          continue;
+        }
+        arr[i] = num;
+        set.insert(num);
       }
-      arr[i] = num;
-      set.insert(num);
+
+    } else {
+      std::uniform_real_distribution<double> u(range1, range2);
+      std::unordered_set<T> set;
+      e.seed(time(0) + times);
+      int n = u(e);
+      for (int i = 0; i < len; i++) {
+        T num = u(e);
+        if (set.count(num)) {
+          i--;
+          continue;
+        }
+        arr[i] = num;
+        set.insert(num);
+      }
     }
     if (len == 1) return arr;
     _Swap(0, RandNum(1, arr.size() - 1, times), arr);
@@ -64,16 +91,15 @@ class Random {
   // 单随机数生成
   T RandNum(T range1, T range2, int times) {
     std::default_random_engine e;
-    std::uniform_int_distribution<T> u(range1, range2);
-    e.seed(time(0) + times);
-    return u(e);
-  }
-  // 单随机实数生成
-  T RandRealNum(T range1, T range2, int times) {
-    std::default_random_engine e;
-    std::uniform_real_distribution<T> u(range1, range2);
-    e.seed(time(0) + times);
-    return u(e);
+    if (typeid(T) == typeid(int)) {
+      std::uniform_int_distribution<int> u(range1, range2);
+      e.seed(time(0) + times);
+      return u(e);
+    } else {
+      std::uniform_real_distribution<double> u(range1, range2);
+      e.seed(time(0) + times);
+      return u(e);
+    }
   }
   // 随机字符串生成
   std::string RandStringa(int len, T range1, T range2, int times) {

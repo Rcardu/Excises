@@ -1,193 +1,182 @@
-#include"../unltle.h"
-namespace Difference{
-using std::vector;
-using std::cout;
-static int MAXN=100005;
-vector<int>arr(MAXN,0);
-    class Arithmetic{
-        //Ò»Î¬²î·Ö
-    private:
-        /*ÕâÀïÓĞ n ¸öº½°à£¬ËüÃÇ·Ö±ğ´Ó 1 µ½ n ½øĞĞ±àºÅ¡£
-        ÓĞÒ»·İº½°àÔ¤¶©±í bookings £¬±íÖĞµÚ i ÌõÔ¤¶©¼ÇÂ¼ 
-        bookings[i] = [firsti, lasti, seatsi] ÒâÎ¶×ÅÔÚ´Ó firsti µ½ lasti 
-        £¨°üº¬ firsti ºÍ lasti £©µÄ Ã¿¸öº½°à ÉÏÔ¤¶©ÁË seatsi ¸ö×ùÎ»¡£
-        ÇëÄã·µ»ØÒ»¸ö³¤¶ÈÎª n µÄÊı×é answer£¬ÀïÃæµÄÔªËØÊÇÃ¿¸öº½°àÔ¤¶¨µÄ×ùÎ»×ÜÊı¡£
-        Ê¾Àı 1£º
-        ÊäÈë£ºbookings = [[1,2,10],[2,3,20],[2,5,25]], n = 5
-        Êä³ö£º[10,55,45,25,25]
-        ½âÊÍ£º
-        º½°à±àºÅ        1   2   3   4   5
-        Ô¤¶©¼ÇÂ¼ 1 £º   10  10
-        Ô¤¶©¼ÇÂ¼ 2 £º       20  20
-        Ô¤¶©¼ÇÂ¼ 3 £º       25  25  25  25
-        ×Ü×ùÎ»Êı£º      10  55  45  25  25
-        Òò´Ë£¬answer = [10,55,45,25,25]
-        Ê¾Àı 2£º
-        ÊäÈë£ºbookings = [[1,2,10],[2,2,15]], n = 2
-        Êä³ö£º[10,25]
-        ½âÊÍ£º
-        º½°à±àºÅ        1   2
-        Ô¤¶©¼ÇÂ¼ 1 £º   10  10
-        Ô¤¶©¼ÇÂ¼ 2 £º       15
-        ×Ü×ùÎ»Êı£º      10  25
-        Òò´Ë£¬answer = [10,25]*/
-        vector<int>LC1109_corpFlightBookings_(vector<vector<int>>&bookings,int n);
-    public:
-        /*LeetCode 1109 º½°àÔ¤¶¨Í³¼Æ*/
-        void Test_LC1109_corpFlightBookings();
-    private:
-        /*Âå¹È P4231
-        N¸öÖù×ÓÅÅ³ÉÒ»ÅÅ£¬Ò»¿ªÊ¼Ã¿¸öÖù×ÓËğÉË¶ÈÎª0¡£
-        ½ÓÏÂÀ´ÓÂÒÇ»á½øĞĞ
-        M´Î¹¥»÷£¬Ã¿´Î¹¥»÷¿ÉÒÔÓÃ4¸ö²ÎÊıl,r,s,eÀ´ÃèÊö£º
-        ±íÊ¾Õâ´Î¹¥»÷×÷ÓÃ·¶Î§ÎªµÚl¸öµ½µÚr¸öÖ®¼äËùÓĞµÄÖù×Ó(°üº¬l,r)£¬
-        ¶ÔµÚÒ»¸öÖù×ÓµÄÉËº¦Îªs£¬¶Ô×îºóÒ»¸öÖù×ÓµÄÉËº¦Îªe¡£
-        ¹¥»÷²úÉúµÄÉËº¦ÖµÊÇÒ»¸öµÈ²îÊıÁĞ¡£Èôl=1,r=5,s=2,e=10£¬
-        Ôò¶ÔµÚ1~5¸öÖù×Ó·Ö±ğ²úÉú2,4,6,8,10µÄÉËº¦¡£
-        ¹í×åÃÇĞèÒªµÄÊÇËùÓĞ¹¥»÷Íê³ÉÖ®ºóÃ¿¸öÖù×ÓµÄËğÉË¶È¡£*/
-        void LGP4231_build(int n);
-        void LGP4231_set(int l,int r,int s,int e,int d);
-    private:
-        int n,m;
-    public:
-        /*Âå¹È P4231*/
-        void LGP4231_ArithmeticSeqenceDifference();
-    };
+#include "../unltle.h"
 
-}
-namespace Lycanthropy{
-    using std::vector;
-    using std::cout;
-    using std::endl;
-    using std::sort;
-    static int OFFSET=30001;
-    static int MAXN=1000006;
-    vector<int>arr(MAXN+2*OFFSET,0);
-    int n,m;
+namespace Ricardo {
 
-    class LycanthropyInBack{
-    private:
-       /*Âå¹È P5026 Lycanthropy*/
-       void LGP5026_set(int l,int r,int s,int e,int d);
-       void LGP5026_fall(int v,int x);
-       void LGP5026_build(int m);
-    public:
-        /*Âå¹È P5026 Lycanthropy*/
-        void Test_LGP5026_Lycanthropy();
-        //nÓĞ¶àÉÙ¸öÈËÂäË®£¬Ã¿¸öÈËÂäË®¾ÍÒâÎ¶×ÅËÄ¸öÊıÁĞµÄ²Ù×÷
-    private:
-        /*¸øÄãÒ»¸ö m x n µÄ¶ş½øÖÆ¾ØÕó grid £¬
-        Ã¿¸ö¸ñ×ÓÒªÃ´Îª 0 £¨¿Õ£©ÒªÃ´Îª 1 £¨±»Õ¼¾İ£©¡£
-        ¸øÄãÓÊÆ±µÄ³ß´çÎª stampHeight x stampWidth ¡£
-        ÎÒÃÇÏë½«ÓÊÆ±Ìù½ø¶ş½øÖÆ¾ØÕóÖĞ£¬ÇÒÂú×ãÒÔÏÂ ÏŞÖÆ ºÍ ÒªÇó £º
-        ¸²¸ÇËùÓĞ ¿Õ ¸ñ×Ó¡£
-        ²»¸²¸ÇÈÎºÎ ±»Õ¼¾İ µÄ¸ñ×Ó¡£
-        ÎÒÃÇ¿ÉÒÔ·ÅÈëÈÎÒâÊıÄ¿µÄÓÊÆ±¡£
-        ÓÊÆ±¿ÉÒÔÏà»¥ÓĞ ÖØµş ²¿·Ö¡£
-        ÓÊÆ±²»ÔÊĞí Ğı×ª ¡£
-        ÓÊÆ±±ØĞëÍêÈ«ÔÚ¾ØÕó ÄÚ ¡£
-        Èç¹ûÔÚÂú×ãÉÏÊöÒªÇóµÄÇ°ÌáÏÂ£¬¿ÉÒÔ·ÅÈëÓÊÆ±£¬Çë·µ»Ø true £¬
-        ·ñÔò·µ»Ø false ¡£*/
-        bool LC2132_possibleToStamp(vector<vector<int>>& grid, int stampHeight, int stampWidth);
-        //½¨Á¢Ç°×ººÍ
-        void LC2132_Build(vector<vector<int>>&sum);
-        //Ç°×ººÍ²éÑ¯
-        int LC2132_sumRegion(vector<vector<int>>sum,int a,int b,int c,int d);
-        //ÔÚ(a,b)µ½(c,d)·¶Î§ÄÚ½øĞĞ²î·Ö²Ù×÷
-        void LC2132_Add(vector<vector<int>>&diff,int a,int b,int c,int d);
-    public:
-        /*LeetCode 2132 ÌùÓÊÆ±*/
-        void Test_LC2132_possibleToStamp();
-    private:
-        /*Ğ¡¿ÛÔÚÌ½Ë÷´ÔÁÖµÄ¹ı³ÌÖĞ£¬ÎŞÒâ¼ä·¢ÏÖÁË´«ËµÖĞ¡°ÂäÄ¯µÄ»Æ½ğÖ®¶¼¡±¡£
-        ¶øÔÚÕâÆ¬½¨Öş·ÏĞæµÄµØ´øÖĞ£¬Ğ¡¿ÛÊ¹ÓÃÌ½²âÒÇ¼à²âµ½ÁË´æÔÚÄ³ÖÖ´øÓĞ
-        ¡¸×£¸£¡¹Ğ§¹ûµÄÁ¦³¡¡£ ¾­¹ı²»¶ÏµÄ¿±²â¼ÇÂ¼£¬
-        Ğ¡¿Û½«ËùÓĞÁ¦³¡µÄ·Ö²¼¶¼¼ÇÂ¼ÁËÏÂÀ´¡£
-        forceField[i] = [x,y,side]±íÊ¾µÚ i Æ¬Á¦³¡½«¸²¸ÇÒÔ×ø±ê (x,y) ÎªÖĞĞÄ£¬
-        ±ß³¤Îª side µÄÕı·½ĞÎÇøÓò¡£
-        ÈôÈÎÒâÒ»µãµÄÁ¦³¡Ç¿¶ÈµÈÓÚ¸²¸Ç¸ÃµãµÄÁ¦³¡ÊıÁ¿£¬
-        ÇëÇó³öÔÚÕâÆ¬µØ´øÖĞ Á¦³¡Ç¿¶È ×îÇ¿´¦µÄ Á¦³¡Ç¿¶È¡£*/
-        int LCP74_fieldOfGreatestBlessing(vector<vector<int>>& forceField);
-        //²î·Ö
-        void LCP74_Add(vector<vector<int>>&diff,int a,int b,int c,int d);
-        //¶ş·Ö²éÑ¯Ò»¸öÊıµÄË÷Òı
-        int LCP74_Rank(vector<long>&nums,long v,int size);
-        //ÅÅĞòÊı×é²¢·µ»ØÈ¥ÖØºóµÄ³¤¶È
-        int LCP74_Sort(vector<long>&nums);
-    public:
-        /*LeetCode LCP 74 ×îÇ¿×£¸£Á¢³¡*/
-        void Test_LCP74_fieldOfGreatestBlessing();
-    };
-    class NumMatrix{
-        //¶şÎ¬Ç°×ººÍ
-        /*¸ø¶¨Ò»¸ö¶şÎ¬¾ØÕó matrix£¬ÒÔÏÂÀàĞÍµÄ¶à¸öÇëÇó£º
-        ¼ÆËãÆä×Ó¾ØĞÎ·¶Î§ÄÚÔªËØµÄ×ÜºÍ£¬¸Ã×Ó¾ØÕóµÄ ×óÉÏ½Ç Îª (row1, col1) £¬
-        ÓÒÏÂ½Ç Îª (row2, col2) ¡£
-        ÊµÏÖ NumMatrix Àà£º
-        NumMatrix(int[][] matrix) ¸ø¶¨ÕûÊı¾ØÕó matrix ½øĞĞ³õÊ¼»¯
-        int sumRegion(int row1, int col1, int row2, int col2) 
-        ·µ»Ø×óÉÏ½Ç(row1, col1)¡¢ÓÒÏÂ½Ç (row2, col2)ËùÃèÊöµÄ×Ó¾ØÕóµÄÔªËØ×ÜºÍ*/
-        private:
-            vector<vector<int>>sum;
-            int n,m;
-        public:
-            NumMatrix(){;}
-            NumMatrix(vector<vector<int>>&martix);
-            int sumRegion(int row1,int col1,int row2,int col2);
-        public:
-            /*LeetCode 304 ¶şÎ¬ÇøÓòºÍ¼ìË÷*/
-            void Test_LC304_NumMatrix();
-        private:
-            /*¸øÄãÒ»¸öÓÉÈô¸É 0 ºÍ 1 ×é³ÉµÄ¶şÎ¬Íø¸ñ grid£¬
-            ÇëÄãÕÒ³ö±ß½çÈ«²¿ÓÉ 1 ×é³ÉµÄ×î´ó Õı·½ĞÎ ×ÓÍø¸ñ£¬
-            ²¢·µ»Ø¸Ã×ÓÍø¸ñÖĞµÄÔªËØÊıÁ¿¡£Èç¹û²»´æÔÚ£¬Ôò·µ»Ø 0¡£*/
-            int LC1139_largest1BorderedSquare(vector<vector<int>>& grid);
-            /*ÖØ¹¹²î·ÖÊı×é*/
-            void LC1139_Build(vector<vector<int>>&martix,int n,int m);
-            /*±ß½çÅĞ¶Ï*/
-            int LC1139_Get(vector<vector<int>>&martix,int i,int j);
-            /*Çó·¶Î§ÄÚµÄºÍ*/
-            int LC1139_Sum(vector<vector<int>>&martix,int a,int b,int c,int d);
-        public:
-            /*LeetCode 1139 ×î´óµÄÒÔ1Îª±ß½çµÄÕı·½ĞÎ*/
-            void Test_LC1139_largest1BorderedSquare();
-    };
-}
-namespace LGP3397{
-    using std::vector;
-    using std::cout;
-    using std::cin;
-    using std::endl;
-    int n,m;
-    void LG_Set(vector<vector<int>>&grid,int a,int b,int c,int d){
-        grid[a][b]+=1;
-        grid[a][d+1]-=1;
-        grid[c+1][b]-=1;
-        grid[c+1][d+1]+=1;
-    }
-    void LG_Add(vector<vector<int>>&grid,int n,int m){
-        for(int i=1;i<=n;i++){
-            for(int j=1;j<=m;j++){
-                grid[i][j]+=grid[i-1][j]+grid[i][j-1]-grid[i-1][j-1];
-            }
-        }
-    }
-    /*Âå¹È 3397 µØÌº*/
-    void LGP3397(){
-        cin>>n;cin>>m;
-        vector<vector<int>>grid(n+2,vector<int>(n+2,0));
-        while(m--){
-            int a,b,c,d;
-            scanf("%d%d%d%d",&a,&b,&c,&d);
-            LG_Set(grid,a,b,c,d);
-        }
-        LG_Add(grid,n,n);
-        for(int i=1;i<=n;i++){
-            for(int j=1;j<=n;j++){
-                cout<<grid[i][j]<<" ";
-            }
-            cout<<endl;
-        }
-        cout<<endl;
-    }
-}
+/*LeetCode 1109 èˆªç­é¢„å®šç»Ÿè®¡*/
+/*è¿™é‡Œæœ‰ n ä¸ªèˆªç­ï¼Œå®ƒä»¬åˆ†åˆ«ä» 1 åˆ° n è¿›è¡Œç¼–å·ã€‚
+       æœ‰ä¸€ä»½èˆªç­é¢„è®¢è¡¨ bookings ï¼Œè¡¨ä¸­ç¬¬ i æ¡é¢„è®¢è®°å½•
+       bookings[i] = [firsti, lasti, seatsi] æ„å‘³ç€åœ¨ä» firsti åˆ° lasti
+       ï¼ˆåŒ…å« firsti å’Œ lasti ï¼‰çš„ æ¯ä¸ªèˆªç­ ä¸Šé¢„è®¢äº† seatsi ä¸ªåº§ä½ã€‚
+       è¯·ä½ è¿”å›ä¸€ä¸ªé•¿åº¦ä¸º n çš„æ•°ç»„ answerï¼Œé‡Œé¢çš„å…ƒç´ æ˜¯æ¯ä¸ªèˆªç­é¢„å®šçš„åº§ä½æ€»æ•°ã€‚
+       ç¤ºä¾‹ 1ï¼š
+       è¾“å…¥ï¼šbookings = [[1,2,10],[2,3,20],[2,5,25]], n = 5
+       è¾“å‡ºï¼š[10,55,45,25,25]
+       è§£é‡Šï¼š
+       èˆªç­ç¼–å·        1   2   3   4   5
+       é¢„è®¢è®°å½• 1 ï¼š   10  10
+       é¢„è®¢è®°å½• 2 ï¼š       20  20
+       é¢„è®¢è®°å½• 3 ï¼š       25  25  25  25
+       æ€»åº§ä½æ•°ï¼š      10  55  45  25  25
+       å› æ­¤ï¼Œanswer = [10,55,45,25,25]
+       ç¤ºä¾‹ 2ï¼š
+       è¾“å…¥ï¼šbookings = [[1,2,10],[2,2,15]], n = 2
+       è¾“å‡ºï¼š[10,25]
+       è§£é‡Šï¼š
+       èˆªç­ç¼–å·        1   2
+       é¢„è®¢è®°å½• 1 ï¼š   10  10
+       é¢„è®¢è®°å½• 2 ï¼š       15
+       æ€»åº§ä½æ•°ï¼š      10  25
+       å› æ­¤ï¼Œanswer = [10,25]*/
+class Arithmetic {
+ public:
+  Arithmetic(std::vector<std::vector<int>> bookings = {
+                 {1, 2, 10}, {2, 3, 20}, {2, 5, 25}});
+
+ private:
+  std::vector<int> corpFlightBookings(std::vector<std::vector<int>>& bookings,
+                                      int n);
+
+ private:
+  int MAXN = 100005;
+  std::vector<int> arr;
+};
+/*æ´›è°· P4231
+Nä¸ªæŸ±å­æ’æˆä¸€æ’ï¼Œä¸€å¼€å§‹æ¯ä¸ªæŸ±å­æŸä¼¤åº¦ä¸º0ã€‚
+æ¥ä¸‹æ¥å‹‡ä»ªä¼šè¿›è¡Œ
+Mæ¬¡æ”»å‡»ï¼Œæ¯æ¬¡æ”»å‡»å¯ä»¥ç”¨4ä¸ªå‚æ•°l,r,s,eæ¥æè¿°ï¼š
+è¡¨ç¤ºè¿™æ¬¡æ”»å‡»ä½œç”¨èŒƒå›´ä¸ºç¬¬lä¸ªåˆ°ç¬¬rä¸ªä¹‹é—´æ‰€æœ‰çš„æŸ±å­(åŒ…å«l,r)ï¼Œ
+å¯¹ç¬¬ä¸€ä¸ªæŸ±å­çš„ä¼¤å®³ä¸ºsï¼Œå¯¹æœ€åä¸€ä¸ªæŸ±å­çš„ä¼¤å®³ä¸ºeã€‚
+æ”»å‡»äº§ç”Ÿçš„ä¼¤å®³å€¼æ˜¯ä¸€ä¸ªç­‰å·®æ•°åˆ—ã€‚è‹¥l=1,r=5,s=2,e=10ï¼Œ
+åˆ™å¯¹ç¬¬1~5ä¸ªæŸ±å­åˆ†åˆ«äº§ç”Ÿ2,4,6,8,10çš„ä¼¤å®³ã€‚
+é¬¼æ—ä»¬éœ€è¦çš„æ˜¯æ‰€æœ‰æ”»å‡»å®Œæˆä¹‹åæ¯ä¸ªæŸ±å­çš„æŸä¼¤åº¦ã€‚*/
+class Seqence {
+ public:
+  Seqence();
+
+ private:
+  void build(int n);
+  void setOut(int l, int r, int s, int e, int d);
+
+ private:
+  int n = 0;
+  int m = 0;
+  int MAXN = 100005;
+  std::vector<int> arr;
+};
+
+/*æ´›è°· P5026 Lycanthropy*/
+// næœ‰å¤šå°‘ä¸ªäººè½æ°´ï¼Œæ¯ä¸ªäººè½æ°´å°±æ„å‘³ç€å››ä¸ªæ•°åˆ—çš„æ“ä½œ
+class LycanthropyInBack {
+ public:
+  LycanthropyInBack();
+
+ private:
+  void setOut(int l, int r, int s, int e, int d);
+  void fall(int v, int x);
+  void build(int m);
+
+ private:
+  int OFFSET = 30001;
+  int MAXN = 1000006;
+  std::vector<int> arr;
+  int n, m;
+};
+
+/*ç»™ä½ ä¸€ä¸ª m x n çš„äºŒè¿›åˆ¶çŸ©é˜µ grid ï¼Œ
+æ¯ä¸ªæ ¼å­è¦ä¹ˆä¸º 0 ï¼ˆç©ºï¼‰è¦ä¹ˆä¸º 1 ï¼ˆè¢«å æ®ï¼‰ã€‚
+ç»™ä½ é‚®ç¥¨çš„å°ºå¯¸ä¸º stampHeight x stampWidth ã€‚
+æˆ‘ä»¬æƒ³å°†é‚®ç¥¨è´´è¿›äºŒè¿›åˆ¶çŸ©é˜µä¸­ï¼Œä¸”æ»¡è¶³ä»¥ä¸‹ é™åˆ¶ å’Œ è¦æ±‚ ï¼š
+è¦†ç›–æ‰€æœ‰ ç©º æ ¼å­ã€‚
+ä¸è¦†ç›–ä»»ä½• è¢«å æ® çš„æ ¼å­ã€‚
+æˆ‘ä»¬å¯ä»¥æ”¾å…¥ä»»æ„æ•°ç›®çš„é‚®ç¥¨ã€‚
+é‚®ç¥¨å¯ä»¥ç›¸äº’æœ‰ é‡å  éƒ¨åˆ†ã€‚
+é‚®ç¥¨ä¸å…è®¸ æ—‹è½¬ ã€‚
+é‚®ç¥¨å¿…é¡»å®Œå…¨åœ¨çŸ©é˜µ å†… ã€‚
+å¦‚æœåœ¨æ»¡è¶³ä¸Šè¿°è¦æ±‚çš„å‰æä¸‹ï¼Œå¯ä»¥æ”¾å…¥é‚®ç¥¨ï¼Œè¯·è¿”å› true ï¼Œ
+å¦åˆ™è¿”å› false ã€‚*/
+class PossibleStamp {
+ public:
+  PossibleStamp(std::vector<std::vector<int>> grid = {
+                    {1, 0, 0, 0}, {0, 1, 0, 0}, {0, 0, 1, 0}, {0, 0, 0, 1}});
+
+ private:
+  bool possibleToStamp(std::vector<std::vector<int>>& grid, int stampHeight,
+                       int stampWidth);
+  // å»ºç«‹å‰ç¼€å’Œ
+  void Build(std::vector<std::vector<int>>& sum);
+  // å‰ç¼€å’ŒæŸ¥è¯¢
+  int sumRegion(std::vector<std::vector<int>> sum, int a, int b, int c, int d);
+  // åœ¨(a,b)åˆ°(c,d)èŒƒå›´å†…è¿›è¡Œå·®åˆ†æ“ä½œ
+  void Add(std::vector<std::vector<int>>& diff, int a, int b, int c, int d);
+};
+
+/*LeetCode LCP 74 æœ€å¼ºç¥ç¦ç«‹åœº*/
+/*å°æ‰£åœ¨æ¢ç´¢ä¸›æ—çš„è¿‡ç¨‹ä¸­ï¼Œæ— æ„é—´å‘ç°äº†ä¼ è¯´ä¸­â€œè½å¯çš„é»„é‡‘ä¹‹éƒ½â€ã€‚
+è€Œåœ¨è¿™ç‰‡å»ºç­‘åºŸå¢Ÿçš„åœ°å¸¦ä¸­ï¼Œå°æ‰£ä½¿ç”¨æ¢æµ‹ä»ªç›‘æµ‹åˆ°äº†å­˜åœ¨æŸç§å¸¦æœ‰
+ã€Œç¥ç¦ã€æ•ˆæœçš„åŠ›åœºã€‚ ç»è¿‡ä¸æ–­çš„å‹˜æµ‹è®°å½•ï¼Œ
+å°æ‰£å°†æ‰€æœ‰åŠ›åœºçš„åˆ†å¸ƒéƒ½è®°å½•äº†ä¸‹æ¥ã€‚
+forceField[i] = [x,y,side]è¡¨ç¤ºç¬¬ i ç‰‡åŠ›åœºå°†è¦†ç›–ä»¥åæ ‡ (x,y) ä¸ºä¸­å¿ƒï¼Œ
+è¾¹é•¿ä¸º side çš„æ­£æ–¹å½¢åŒºåŸŸã€‚
+è‹¥ä»»æ„ä¸€ç‚¹çš„åŠ›åœºå¼ºåº¦ç­‰äºè¦†ç›–è¯¥ç‚¹çš„åŠ›åœºæ•°é‡ï¼Œ
+è¯·æ±‚å‡ºåœ¨è¿™ç‰‡åœ°å¸¦ä¸­ åŠ›åœºå¼ºåº¦ æœ€å¼ºå¤„çš„ åŠ›åœºå¼ºåº¦ã€‚*/
+class FieldOfGreatestBlessing {
+ public:
+  FieldOfGreatestBlessing(std::vector<std::vector<int>> grid = {
+                              {4, 7, 6}, {7, 5, 3}, {1, 6, 2}, {4, 6, 3}});
+
+ private:
+  int fieldOfGreatestBlessing(std::vector<std::vector<int>>& forceField);
+  void Add(std::vector<std::vector<int>>& diff, int a, int b, int c, int d);
+  int Rank(std::vector<long>& nums, long v, int size);
+  int Sort(std::vector<long>& nums);
+};
+/*LeetCode 304 äºŒç»´åŒºåŸŸå’Œæ£€ç´¢*/
+class NumMatrix {
+ public:
+  NumMatrix(std::vector<std::vector<int>> martix);
+
+ private:
+  int sumRegion(int row1, int col1, int row2, int col2);
+
+ private:
+  std::vector<std::vector<int>> sum;
+  int n, m;
+};
+
+/*ç»™ä½ ä¸€ä¸ªç”±è‹¥å¹² 0 å’Œ 1 ç»„æˆçš„äºŒç»´ç½‘æ ¼ gridï¼Œ
+è¯·ä½ æ‰¾å‡ºè¾¹ç•Œå…¨éƒ¨ç”± 1 ç»„æˆçš„æœ€å¤§ æ­£æ–¹å½¢ å­ç½‘æ ¼ï¼Œ
+å¹¶è¿”å›è¯¥å­ç½‘æ ¼ä¸­çš„å…ƒç´ æ•°é‡ã€‚å¦‚æœä¸å­˜åœ¨ï¼Œåˆ™è¿”å› 0ã€‚*/
+class LargestBorderedSquare {
+ public:
+  /*LeetCode 1139 æœ€å¤§çš„ä»¥1ä¸ºè¾¹ç•Œçš„æ­£æ–¹å½¢*/
+  LargestBorderedSquare(std::vector<std::vector<int>> grid = {
+                            {1, 1, 1}, {1, 0, 1}, {1, 1, 1}});
+
+ private:
+  int largestBorderedSquare(std::vector<std::vector<int>>& grid);
+  /*é‡æ„å·®åˆ†æ•°ç»„*/
+  void Build(std::vector<std::vector<int>>& martix, int n, int m);
+  /*è¾¹ç•Œåˆ¤æ–­*/
+  int Get(std::vector<std::vector<int>>& martix, int i, int j);
+  /*æ±‚èŒƒå›´å†…çš„å’Œ*/
+  int Sum(std::vector<std::vector<int>>& martix, int a, int b, int c, int d);
+
+ private:
+  std::vector<std::vector<int>> sum;
+  int n, m;
+};
+
+/*æ´›è°· 3397 åœ°æ¯¯*/
+class LGP3397 {
+ public:
+  LGP3397();
+
+ private:
+  void LG_Set(std::vector<std::vector<int>>& grid, int a, int b, int c, int d);
+  void LG_Add(std::vector<std::vector<int>>& grid, int n, int m);
+
+ private:
+  int n, m;
+};
+
+}  // namespace Ricardo
