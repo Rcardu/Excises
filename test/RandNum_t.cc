@@ -4,15 +4,15 @@
 #include "RandomNum.h"
 
 void test_random() {
-  Ricardo::Random<double> ra;
-  std::vector<double> rv1 = ra.RandVector(10, 1.0, 20.0, 0);
-  std::vector<double> rv2 = ra.RandVector(10, 2.0, 23.0, 0);
+  Ricardo::Random<int> ra;
+  std::vector<int> rv1 = ra.RandVector(10, 1.0, 20.0, 0);
+  std::vector<int> rv2 = ra.RandVector(10, 2.0, 23.0, 0);
   std::cout << Ricardo::toString(rv1) << std::endl;
   std::cout << Ricardo::toString(rv2) << std::endl;
 
-  Ricardo::Random<int> rs;
-  std::vector<int> rd1 = rs.RandVectorDifferent(10, 1, 20, 0);
-  std::vector<int> rd2 = rs.RandVectorDifferent(10, 2, 23, 0);
+  Ricardo::Random<double> rs;
+  std::vector<double> rd1 = rs.RandVectorDifferent(10, 1, 20, 0);
+  std::vector<double> rd2 = rs.RandVectorDifferent(10, 2, 23, 0);
   std::cout << Ricardo::toString(rd1) << std::endl;
   std::cout << Ricardo::toString(rd2) << std::endl;
 
