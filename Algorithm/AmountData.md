@@ -1,12 +1,30 @@
-AmountFOfData.hÍ·ÎÄ¼þÖÐ½éÉÜÇÒÉùÃ÷ÁËÌâÄ¿Óëº¯Êý
-int KillMonsterEverySkillUseOnce_(int n,int m,std::vector<int>kill,std::vector<int>blood);ÊÇÓÃÀ´¼ÆËãÉ±ËÀ¹ÖµÄ×îÉÙ¹¥»÷´ÎÊýµÄ£¬Õâ¸öº¯ÊýÖ»ÓÃÀ´²âÊÔ²¢±©Á¦µÝ¹éÊý¾Ý£¬´Ó¶ø»ñµÃÊý¾ÝÁ¿²Â²â½â·¨
-ÕâÊÇLeetCode 906 µÄÌâÄ¿
-LC906_superpalindromesInRange_(string left,string right)£»
-µ±Ò»¸öÊýÊÇ»ØÎÄÊý£¬ÇÒÕâ¸öÊýÊÇÆ½·½Êý£¬ÄÇÃ´Õâ¸öÊý¾ÍÊÇ³¬¼¶»ØÎÄÊý
-ÒªÑ°ÕÒÇø¼ä[left,right]ÄÚËùÓÐµÄ³¬¼¶»ØÎÄÊý
-ÔÚlÓërµÄ¸ùºÅÏÂÑ°ÕÒ£¬Èç¹ûÒ»¸öÊýÊÇ»ØÎÄÊý£¬ÇÒËûµÄÆ½·½Ò²ÊÇ»ØÎÄÊý£¬³¬¼¶»ØÎÄÊýÒ²¾ÍÊÇËüµÄÆ½·½ÁË
-·Ö±ðÉú³ÉÆæÅ¼Êý³¤¶ÈµÄ»ØÎÄÊý£¬²¢ÅÐ¶ÏÆäÆ½·½ÊÇ·ñÎª»ØÎÄ£¬Èç¹ûÍ¬Ò»¸öÖÖ×ÓÏÂËüµÄÆæÊý³¤¶ÈµÄ»ØÎÄÊýÒÑ¾­³¬¹ýÁË¸ùºÅÏÂr£¬ÄÇÃ´ÏÂÒ»¸öµÄÆæÊý³¤¶ÈµÄ»ØÎÄÊý¾Í²»ÓÃÅÐ¶ÏÁË£¬ÒòÎªËüµÄÆ½·½Ò»¶¨´óÓÚrÁË
-½ÓÏÂÀ´Ö»ÐèÒªÅÐ¶ÏÉú³ÉµÄÆæÅ¼Êý³¤¶ÈµÄ»ØÎÄµÄÆ½·½ÊÇ·ñÎª»ØÎÄ¼´¿É
-Ã¿Éú³ÉÒ»¸ö³¬¼¶»ØÎÄÊý£¬¾Í½«ÆäÌí¼Óµ½ansÖÐ
+AmountFOfData.hå¤´æ–‡ä»¶ä¸­ä»‹ç»ä¸”å£°æ˜Žäº†é¢˜ç›®ä¸Žå‡½æ•°
+
+int KillMonsterEverySkillUseOnce_(int n,int m,std::vector<int>kill,std::vector<int>blood);
+
+æ˜¯ç”¨æ¥è®¡ç®—æ€æ­»æ€ªçš„æœ€å°‘æ”»å‡»æ¬¡æ•°çš„ï¼Œè¿™ä¸ªå‡½æ•°åªç”¨æ¥æµ‹è¯•å¹¶æš´åŠ›é€’å½’æ•°æ®ï¼Œä»Žè€ŒèŽ·å¾—æ•°æ®é‡çŒœæµ‹è§£æ³•
+
+#### è¿™æ˜¯LeetCode 906 çš„é¢˜ç›®
+
+LC906_superpalindromesInRange_(string left,string right)ï¼›
+
+å½“ä¸€ä¸ªæ•°æ˜¯å›žæ–‡æ•°ï¼Œä¸”è¿™ä¸ªæ•°æ˜¯å¹³æ–¹æ•°ï¼Œé‚£ä¹ˆè¿™ä¸ªæ•°å°±æ˜¯è¶…çº§å›žæ–‡æ•°
+
+è¦å¯»æ‰¾åŒºé—´[left,right]å†…æ‰€æœ‰çš„è¶…çº§å›žæ–‡æ•°
+
+åœ¨lä¸Žrçš„æ ¹å·ä¸‹å¯»æ‰¾ï¼Œå¦‚æžœä¸€ä¸ªæ•°æ˜¯å›žæ–‡æ•°ï¼Œä¸”ä»–çš„å¹³æ–¹ä¹Ÿæ˜¯å›žæ–‡æ•°ï¼Œè¶…çº§å›žæ–‡æ•°ä¹Ÿå°±æ˜¯å®ƒçš„å¹³æ–¹äº†
+
+åˆ†åˆ«ç”Ÿæˆå¥‡å¶æ•°é•¿åº¦çš„å›žæ–‡æ•°ï¼Œå¹¶åˆ¤æ–­å…¶å¹³æ–¹æ˜¯å¦ä¸ºå›žæ–‡ï¼Œ
+
+å¦‚æžœåŒä¸€ä¸ªç§å­ä¸‹å®ƒçš„å¥‡æ•°é•¿åº¦çš„å›žæ–‡æ•°å·²ç»è¶…è¿‡äº†æ ¹å·ä¸‹rï¼Œ
+
+é‚£ä¹ˆä¸‹ä¸€ä¸ªçš„å¥‡æ•°é•¿åº¦çš„å›žæ–‡æ•°å°±ä¸ç”¨åˆ¤æ–­äº†ï¼Œå› ä¸ºå®ƒçš„å¹³æ–¹ä¸€å®šå¤§äºŽräº†
+
+æŽ¥ä¸‹æ¥åªéœ€è¦åˆ¤æ–­ç”Ÿæˆçš„å¥‡å¶æ•°é•¿åº¦çš„å›žæ–‡çš„å¹³æ–¹æ˜¯å¦ä¸ºå›žæ–‡å³å¯
+
+æ¯ç”Ÿæˆä¸€ä¸ªè¶…çº§å›žæ–‡æ•°ï¼Œå°±å°†å…¶æ·»åŠ åˆ°ansä¸­
+
 int AmountFOfData::LC906_superpalindromesInRange2_(string left,string right);
-Õâ¸öº¯ÊýÊÇ»ùÓÚÉÏÒ»¸ö·½·¨µÃ³öµÄ¼ÆËã³¬¼¶»ØÎÄÊýµÄËãÊõ·½·¨£¬ÆäÊ±¼ä¸´ÔÓ¶ÈÎªO(1);
+
+è¿™ä¸ªå‡½æ•°æ˜¯åŸºäºŽä¸Šä¸€ä¸ªæ–¹æ³•å¾—å‡ºçš„è®¡ç®—è¶…çº§å›žæ–‡æ•°çš„ç®—æœ¯æ–¹æ³•ï¼Œå…¶æ—¶é—´å¤æ‚åº¦ä¸ºO(1);
+
